@@ -7,9 +7,9 @@ const map = new google.maps.Map(document.getElementById("googleMap"), {
   
   // Data for multiple markers
   const markerData = [
-    { position: { lat: 37.459770, lng: 126.950317 }, title: "TJV Marker 1" },
-    { position: { lat: 37.459670, lng: 126.950417 }, title: "TJV Marker 2" },
-    { position: { lat: 37.459570, lng: 126.950517 }, title: "TJV Marker 3" },
+    { position: { lat: 37.459770, lng: 126.950317 }, title: "학생회관 식당 출구" },
+    { position: { lat: 37.458951, lng: 126.951973 }, title: "중도 씨유" },
+    { position: { lat: 37.459735, lng: 126.954946 }, title: "사범대 12동 마당쪽" },
   ];
   
   // Function to create custom pins and markers
