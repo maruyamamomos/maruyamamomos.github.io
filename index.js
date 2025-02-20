@@ -1,7 +1,7 @@
 // Initialize the map
 const map = new google.maps.Map(document.getElementById("googleMap"), {
     center: { lat: 37.459670, lng: 126.950317 },
-    zoom: 17,
+    zoom: 14,
     mapId: "TJV_MAP_ID",
   });
   
