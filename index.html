@@ -184,7 +184,7 @@
   <script src="index.js" defer></script> 
 
   <!-- Single Authentication Form -->
-  <div id="authDiv" class="form-container">
+  <!-- <div id="authDiv" class="form-container">
     <h2>Login / Register</h2>
     <form id="authForm">
       <label for="username">Username:</label><br>
@@ -193,13 +193,13 @@
       <input type="password" id="password" name="password" required><br><br>
       <button type="submit">Submit</button>
     </form>
-  </div>
+  </div> -->
 
   <!-- Welcome Message -->
-  <div id="welcomeDiv" class="hidden">
+  <!-- <div id="welcomeDiv" class="hidden">
     <h2><span id="displayUsername"></span></h2>
     <button id="logoutBtn">Logout</button>
-  </div>
+  </div> -->
 
 
   <!-- Toggle Space for Additional Actions -->
@@ -209,10 +209,63 @@
       <label for="drinkCount">Drink Count:</label>
       <input type="text" id="drinkCount" readonly> 
       <button id="addDrinkCountBtn">Add Te Java Count</button>
+      <button id="initDrinkCountBtn">Init Te Java Count</button>
+    </div>
+    <div>
+      <label for="savedDate">Drink Dates:</label>
+      <h4><span id="savedDate"></span></h4>
     </div>
   </div>
 
+
   <script>
+    // Initialize counters if not already set, and update the display fields.
+    function initCounters() {
+      if (localStorage.getItem("drinkCount") === null) {
+        localStorage.setItem("drinkCount", 0);
+      }
+      document.getElementById("drinkCount").value = localStorage.getItem("drinkCount");
+    }
+
+    function getAllSavedDates() {
+      let allSavedDates;
+      allSavedDates = localStorage.getItem("savedDate");
+      return allSavedDates;
+    }
+
+    initCounters();
+    document.getElementById("drinkCount").value = localStorage.getItem("drinkCount");
+    document.getElementById("savedDate").innerText = localStorage.getItem("savedDate") || "->"; // getAllSavedDates();
+
+    // Increment the drink counter and update LocalStorage and display.
+    document.getElementById("addDrinkCountBtn").addEventListener("click", function() {
+      let count;
+      count = localStorage.getItem("drinkCount");
+      count++;
+      document.getElementById("drinkCount").value = count;
+      localStorage.setItem("drinkCount", count);
+
+      // save the date
+      let currentDate = new Date();
+      currentDate = currentDate.toISOString().slice(5, 10) + "_" + currentDate.toISOString().slice(11, 16);
+      const beforeDate = localStorage.getItem("savedDate");
+      localStorage.setItem("savedDate", beforeDate + ", " + currentDate);
+      document.getElementById("savedDate").innerText = localStorage.getItem("savedDate") || "->";
+
+    });
+    
+    // Initialize the drink count.
+    document.getElementById("initDrinkCountBtn").addEventListener("click", function() {
+      localStorage.setItem("drinkCount", 0);
+      localStorage.setItem("savedDate", "->");
+      document.getElementById("savedDate").innerText = "->";
+      document.getElementById("drinkCount").value = 0;
+
+    });
+
+  </script>
+
+  <!-- <script>
     // Retrieve stored users from LocalStorage; return an object (or an empty object if none exist)
     function getUsers() {
       const users = localStorage.getItem("users");
@@ -227,7 +280,7 @@
     // Initialize counters if not already set, and update the display fields.
     function initCounters() {
       if (localStorage.getItem("drinkCount") === null) {
-        localStorage.setItem("drinkCount", "0");
+        localStorage.setItem("drinkCount", 0);
       }
       document.getElementById("drinkCount").value = localStorage.getItem("drinkCount");
     }
@@ -267,20 +320,24 @@
         showWelcome();
       }
 
-      let storedValue = localStorage.getItem(username + "drinkCount");
-      let count;
-      if (storedValue) {
-        // Expect stored value in the format "username_count", e.g., "john_5"
-        const match = storedValue.match(/_(\d+)/);
-        count = match ? parseInt(match[1]) : 0;
-      } else {
-        count = 0;
-      }
-      document.getElementById("drinkCount").value = count;
+      // let storedValue = localStorage.getItem(username + "drinkCount");
+      // let count;
+      // if (storedValue) {
+        // // Expect stored value in the format "username_count", e.g., "john_5"
+        // const match = storedValue.match(/_(\d+)/);
+        // count = match ? parseInt(match[1]) : 0;
+      // } else {
+        // count = 0;
+      // }
+      // document.getElementById("drinkCount").value = count;
+
 
 
 
     });
+    
+    initCounters();
+    document.getElementById("drinkCount").value = localStorage.getItem("drinkCount");
 
     // Logout: clear the logged-in state and show the auth form again
     document.getElementById("logoutBtn").addEventListener("click", function() {
@@ -321,22 +378,28 @@
       // document.getElementById("drinkCount").value = count;
 
       // get count by the name of the user
-      const username = localStorage.getItem("username") || "User";
-      let storedValue = localStorage.getItem(username + "drinkCount");
+      // const username = localStorage.getItem("username") || "User";
+      // let storedValue = localStorage.getItem(username + "drinkCount");
+      // let count;
+
+      // if (storedValue) {
+        // // Expect stored value in the format "username_count", e.g., "john_5"
+        // const match = storedValue.match(/_(\d+)/);
+        // count = match ? parseInt(match[1]) : 0;
+      // } else {
+        // count = 0;
+      // }
+
+      // count++; // Increment the count
+      // // Save with the format "username_count"
+      // localStorage.setItem(username + "drinkCount", username + "_" + count.toString());
+      // document.getElementById("drinkCount").value = count;
+
       let count;
-
-      if (storedValue) {
-        // Expect stored value in the format "username_count", e.g., "john_5"
-        const match = storedValue.match(/_(\d+)/);
-        count = match ? parseInt(match[1]) : 0;
-      } else {
-        count = 0;
-      }
-
-      count++; // Increment the count
-      // Save with the format "username_count"
-      localStorage.setItem(username + "drinkCount", username + "_" + count.toString());
+      count = localStorage.getItem("drinkCount");
+      count++;
       document.getElementById("drinkCount").value = count;
+      localStorage.setItem("drinkCount", count);
 
       // save the date
       const currentDate = new Date();
@@ -348,7 +411,7 @@
 
 
 
-  </script>
+  </script> -->
 
 
 
