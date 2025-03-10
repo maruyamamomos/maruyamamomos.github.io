@@ -10,178 +10,30 @@
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@300;400&display=swap" rel="stylesheet">
 
     <!-- Custom Styles -->
-    <style>
-        body {
-            font-family: 'Roboto', sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f9f9f9; /* Light background for elegance */
-            color: #333; /* Dark gray text for readability */
-        }
-
-        .big-title {
-            font-family: 'Playfair Display', serif; /* Elegant font for title */
-            font-size: 4rem; /* Big title size */
-            font-weight: 700; /* Bold weight for emphasis */
-            color: #2c3e50; /* Rich dark blue color */
-            text-align: center;
-            margin-top: 50px;
-        }
-
-        .mid-explanation {
-            font-family: 'Roboto', sans-serif; /* Clean, readable font */
-            font-size: 1.5rem; /* Mid-sized explanation */
-            font-weight: 300; /* Light weight for a softer tone */
-            color: #555; /* Medium gray for contrast */
-            text-align: center;
-            margin: 20px auto;
-            max-width: 800px; /* Limit width for readability */
-            line-height: 1.8; /* Improve readability with line height */
-        }
-
-        .mid2-explanation {
-          font-family: 'Roboto', sans-serif; /* Clean, readable font */
-          font-size: 1.3rem; /* Mid-sized explanation */
-          font-weight: 300; /* Light weight for a softer tone */
-          color: #766; /* Medium gray for contrast */
-          text-align: center;
-          margin: 20px auto;
-          max-width: 800px; /* Limit width for readability */
-          line-height: 1.4; /* Improve readability with line height */
-      }
-    </style>
-    <style>
-        #expert {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            min-height: 100vh; /* Full viewport height */
-            background-color: #ffffff; /* Clean white background for the section */
-            padding: 20px;
-            box-shadow: 0px -4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
-        }
-
-        .map-title {
-            font-family: 'Playfair Display', serif; /* Elegant serif font */
-            font-size: 2.5rem; /* Large title size */
-            font-weight: 700; /* Bold for emphasis */
-            color: #2c3e50; /* Rich dark blue for elegance */
-            text-align: center;
-            margin-bottom: 30px; /* Space below the title */
-        }
-
-        #googleMap {
-            width: 90%; /* Adjust width for responsiveness */
-            max-width: 800px; /* Limit maximum width for large screens */
-            height: 400px; /* Comfortable height for visibility */
-            border: 3px solid #2c3e50; /* Dark border for definition */
-            border-radius: 10px; /* Rounded corners for elegance */
-            box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2); /* Drop shadow for depth */
-        }
-    </style>
-    <style>
-        .map-controls {
-            display: flex;
-            justify-content: center;
-            gap: 10px;
-            margin-top: 20px;
-        }
-        
-        .map-controls button {
-            background-color: #2c3e50;
-            color: #fff;
-            font-family: 'Roboto', Arial, sans-serif;
-            font-size: 1rem;
-            padding: 10px 15px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
-            transition: background-color 0.3s ease;
-        }
-        
-        .map-controls button:hover {
-            background-color: #34495e;
-        }
-    </style>
+    <link rel="stylesheet" href="style.css" />
 </head>
 
 <body>
-    <header>
-        <h1 class="big-title">Te Java</h1>
-        <p class="mid-explanation">
-            서울대가 사랑한 밀크티
-        </p>
-        <div class="title white">
-          <h2 class="mid2-explanation">서울대학교는 예로부터 데자와의 학교였다. 그러나 데자와를 음해하는 세력으로 인해 데자와를 파는 매점과 자판기가 점점 사라지고 있다. 여기에 위기 의식을 느낀 바, 우리는 신입생에게 데자와가 어디에 있는지 알려야 할 의지를 품고 데자와 지도를 만들었다. 이로 하여금 새 학기에 교정을 돌아다닐 신입생들에게 데자와의 정신을 전수하고자 한다.</h2>
-          <!-- <p> These are some of the recipes we from our users.</p> -->
-        </div>
-    </header>
-</body>
-
-<body>
-  <section class="expert" id="expert">
-    <div class="content">
-        <h1 class="map-title">데자와, 그대는 어디에?</h1>
-        <div id="googleMap"></div>
-        <div class="map-controls">
-            <button onclick="map.setCenter({ lat: 37.459770, lng: 126.950317 })">학생회관 식당 출구</button>
-            <button onclick="map.setCenter({ lat: 37.458951, lng: 126.951973 })">중도 씨유</button>
-
-            <!-- 이 밑으로는 있는지 없는지 확인이 필요함 -->
-            <!-- 좌표도 수정해야 함 -->
-            <!-- <button onclick="map.setCenter({ lat: 37.459770, lng: 126.950317 })">농학도서관 75-1 식당</button>
-            <button onclick="map.setCenter({ lat: 37.458951, lng: 126.951973 })">학생식당 우측</button>
-            <button onclick="map.setCenter({ lat: 37.459735, lng: 126.954946 })">중앙도서관</button>
-            <button onclick="map.setCenter({ lat: 37.460500, lng: 126.955300 })">동원생활관 1층</button>
-            <button onclick="map.setCenter({ lat: 37.461000, lng: 126.956000 })">81동 생명공학연구소</button>
-            <button onclick="map.setCenter({ lat: 37.461500, lng: 126.956500 })">백신연구소 로비휴게실</button>
-            <button onclick="map.setCenter({ lat: 37.462000, lng: 126.957000 })">자동차 133동</button>
-            <button onclick="map.setCenter({ lat: 37.462500, lng: 126.957500 })">사이언스 56</button>
-            <button onclick="map.setCenter({ lat: 37.463000, lng: 126.958000 })">301동 2층</button>
-            <button onclick="map.setCenter({ lat: 37.463500, lng: 126.958500 })">학생회관 좌측</button>
-            <button onclick="map.setCenter({ lat: 37.464000, lng: 126.959000 })">동물병원 휴게실</button>
-            <button onclick="map.setCenter({ lat: 37.464500, lng: 126.959500 })">두레문예관</button>
-            <button onclick="map.setCenter({ lat: 37.465000, lng: 126.960000 })">체육관 71동 2층</button>
-            <button onclick="map.setCenter({ lat: 37.465500, lng: 126.960500 })">신양학술관 3층</button>
-            <button onclick="map.setCenter({ lat: 37.466000, lng: 126.961000 })">10-1동 사법 정보관</button>
-            <button onclick="map.setCenter({ lat: 37.466500, lng: 126.961500 })">200 농업생명 과학대 1층</button>
-            <button onclick="map.setCenter({ lat: 37.467000, lng: 126.962000 })">관학 942동 로비</button>
-            <button onclick="map.setCenter({ lat: 37.467500, lng: 126.962500 })">36동(공학관)</button>
-            <button onclick="map.setCenter({ lat: 37.468000, lng: 126.963000 })">71동 체육관</button>
-            <button onclick="map.setCenter({ lat: 37.468500, lng: 126.963500 })">49동 음대</button>
-            <button onclick="map.setCenter({ lat: 37.469000, lng: 126.964000 })">500동 1층</button>
-            <button onclick="map.setCenter({ lat: 37.469500, lng: 126.964500 })">143동 약대 1층</button>
-            <button onclick="map.setCenter({ lat: 37.470000, lng: 126.965000 })">502동</button>
-            <button onclick="map.setCenter({ lat: 37.470500, lng: 126.965500 })">학생회관 2층</button>
-            <button onclick="map.setCenter({ lat: 37.471000, lng: 126.966000 })">504동</button>
-            <button onclick="map.setCenter({ lat: 37.471500, lng: 126.966500 })">301동</button>
-            <button onclick="map.setCenter({ lat: 37.472000, lng: 126.967000 })">50동 미술대</button>
-            <button onclick="map.setCenter({ lat: 37.472500, lng: 126.967500 })">57-1동</button>
-            <button onclick="map.setCenter({ lat: 37.473000, lng: 126.968000 })">자동차연구소 3층</button>
-            <button onclick="map.setCenter({ lat: 37.473500, lng: 126.968500 })">39동 농협 로비</button>
-            <button onclick="map.setCenter({ lat: 37.474000, lng: 126.969000 })">200동 4층</button>
-            <button onclick="map.setCenter({ lat: 37.474500, lng: 126.969500 })">17동 법대 로스쿨</button>
-            <button onclick="map.setCenter({ lat: 37.475000, lng: 126.970000 })">311동 1층</button>
-            <button onclick="map.setCenter({ lat: 37.475500, lng: 126.970500 })">교수회관 뜨란채 1층</button>
-            <button onclick="map.setCenter({ lat: 37.476000, lng: 126.971000 })">104-1동 반도체연구소</button>
-            <button onclick="map.setCenter({ lat: 37.476500, lng: 126.971500 })">보건대 2층</button>
-            <button onclick="map.setCenter({ lat: 37.477000, lng: 126.972000 })">302동 7층</button>
-            <button onclick="map.setCenter({ lat: 37.477500, lng: 126.972500 })">71-1 체육문화연구소 1층</button>
-            <button onclick="map.setCenter({ lat: 37.478000, lng: 126.973000 })">220동 1층</button>
-            <button onclick="map.setCenter({ lat: 37.459735, lng: 126.954946 })">사범대 12동 1층 마당쪽</button> -->
-
-        </div>
-
-        <script
-            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyApk4SvTu8K0OIXSYh2mnfnBn0OxQOam-0&libraries=maps&v=beta&libraries=marker"
-            defer
-        ></script>
+  <h1 class="big-title">Te Java</h1>
+  <p class="mid-explanation">
+  서울대가 사랑한 밀크티
+  </p>
+  <header>
+    <div class="container">
+        <div class="item"><a href="index.html">Home </a></div>
+        <div class="item"><a href="map.html">Map </a></div>
+        <div class="item"><a href="calendar.html">Calendar </a></div>
+        <div class="item"><a href="about_us.html">About Us </a></div>
     </div>
-  </section>
+  </header>
 
-  <script src="index.js" defer></script> 
+  
+
+  <div class="title white">
+  <p class="mid2-explanation">서울대학교는 예로부터 데자와의 학교였다. 그러나 데자와를 음해하는 세력으로 인해 데자와를 파는 매점과 자판기가 점점 사라지고 있다. 여기에 위기 의식을 느낀 바, 우리는 신입생에게 데자와가 어디에 있는지 알려야 할 의지를 품고 데자와 지도를 만들었다. 이로 하여금 새 학기에 교정을 돌아다닐 신입생들에게 데자와의 정신을 전수하고자 한다.</p>
+  </div>
+
+</body>
 
   <!-- Single Authentication Form -->
   <!-- <div id="authDiv" class="form-container">
@@ -203,67 +55,6 @@
 
 
   <!-- Toggle Space for Additional Actions -->
-  <div id="toggleDiv" class="hidden form-container">
-    <h3>Toggle Space</h3>
-    <div class="counter-group">
-      <label for="drinkCount">Drink Count:</label>
-      <input type="text" id="drinkCount" readonly> 
-      <button id="addDrinkCountBtn">Add Te Java Count</button>
-      <button id="initDrinkCountBtn">Init Te Java Count</button>
-    </div>
-    <div>
-      <label for="savedDate">Drink Dates:</label>
-      <h4><span id="savedDate"></span></h4>
-    </div>
-  </div>
-
-
-  <script>
-    // Initialize counters if not already set, and update the display fields.
-    function initCounters() {
-      if (localStorage.getItem("drinkCount") === null) {
-        localStorage.setItem("drinkCount", 0);
-      }
-      document.getElementById("drinkCount").value = localStorage.getItem("drinkCount");
-    }
-
-    function getAllSavedDates() {
-      let allSavedDates;
-      allSavedDates = localStorage.getItem("savedDate");
-      return allSavedDates;
-    }
-
-    initCounters();
-    document.getElementById("drinkCount").value = localStorage.getItem("drinkCount");
-    document.getElementById("savedDate").innerText = localStorage.getItem("savedDate") || "->"; // getAllSavedDates();
-
-    // Increment the drink counter and update LocalStorage and display.
-    document.getElementById("addDrinkCountBtn").addEventListener("click", function() {
-      let count;
-      count = localStorage.getItem("drinkCount");
-      count++;
-      document.getElementById("drinkCount").value = count;
-      localStorage.setItem("drinkCount", count);
-
-      // save the date
-      let currentDate = new Date();
-      currentDate = currentDate.toISOString().slice(5, 10) + "_" + currentDate.toISOString().slice(11, 16);
-      const beforeDate = localStorage.getItem("savedDate");
-      localStorage.setItem("savedDate", beforeDate + ", " + currentDate);
-      document.getElementById("savedDate").innerText = localStorage.getItem("savedDate") || "->";
-
-    });
-    
-    // Initialize the drink count.
-    document.getElementById("initDrinkCountBtn").addEventListener("click", function() {
-      localStorage.setItem("drinkCount", 0);
-      localStorage.setItem("savedDate", "->");
-      document.getElementById("savedDate").innerText = "->";
-      document.getElementById("drinkCount").value = 0;
-
-    });
-
-  </script>
 
   <!-- <script>
     // Retrieve stored users from LocalStorage; return an object (or an empty object if none exist)
@@ -404,28 +195,11 @@
       // save the date
       const currentDate = new Date();
       localStorage.setItem('savedDate', currentDate.toISOString());
-
-
     });
-
-
-
-
   </script> -->
 
 
-
-
-
-
-
-
-
-
-
-
 </body>
-
 </html>
 
 <!-- git add --all

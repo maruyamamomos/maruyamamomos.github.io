@@ -1,0 +1,97 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9; /* Light background for elegance */
+    color: #333; /* Dark gray text for readability */
+}
+
+a:link, a:visited, a:hover, a:active {color:#333;}
+
+/* header {display: flex; justify-content: space-between;} */
+
+.container {display: flex; flex-direction: row; flex-wrap: wrap; justify-content: space-between;}
+
+.big-title {
+    font-family: 'Playfair Display', serif; /* Elegant font for title */
+    font-size: 4rem; /* Big title size */
+    font-weight: 700; /* Bold weight for emphasis */
+    color: #2c3e50; /* Rich dark blue color */
+    text-align: center;
+    margin-top: 50px;
+}
+
+.mid-explanation {
+    font-family: 'Roboto', sans-serif; /* Clean, readable font */
+    font-size: 1.5rem; /* Mid-sized explanation */
+    font-weight: 300; /* Light weight for a softer tone */
+    color: #555; /* Medium gray for contrast */
+    text-align: center;
+    margin: 20px auto;
+    max-width: 800px; /* Limit width for readability */
+    line-height: 1.8; /* Improve readability with line height */
+}
+
+.mid2-explanation {
+    font-family: 'Roboto', sans-serif; /* Clean, readable font */
+    font-size: 0.7rem; /* Mid-sized explanation */
+    font-weight: 300; /* Light weight for a softer tone */
+    color: #766; /* Medium gray for contrast */
+    text-align: left;
+    margin: 20px auto;
+    max-width: 800px; /* Limit width for readability */
+    line-height: 1.4; /* Improve readability with line height */
+}
+
+#expert {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh; /* Full viewport height */
+    background-color: #ffffff; /* Clean white background for the section */
+    padding: 20px;
+    box-shadow: 0px -4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+.map-title {
+    font-family: 'Playfair Display', serif; /* Elegant serif font */
+    font-size: 2.5rem; /* Large title size */
+    font-weight: 700; /* Bold for emphasis */
+    color: #2c3e50; /* Rich dark blue for elegance */
+    text-align: center;
+    margin-bottom: 30px; /* Space below the title */
+}
+
+#googleMap {
+    width: 90%; /* Adjust width for responsiveness */
+    max-width: 800px; /* Limit maximum width for large screens */
+    height: 400px; /* Comfortable height for visibility */
+    border: 3px solid #2c3e50; /* Dark border for definition */
+    border-radius: 10px; /* Rounded corners for elegance */
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2); /* Drop shadow for depth */
+}
+
+.map-controls {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.map-controls button {
+    background-color: #2c3e50;
+    color: #fff;
+    font-family: 'Roboto', Arial, sans-serif;
+    font-size: 1rem;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease;
+}
+
+.map-controls button:hover {
+    background-color: #34495e;
+}
