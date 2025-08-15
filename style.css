@@ -63,7 +63,7 @@ a:link, a:visited, a:hover, a:active {color:#333;}
     margin-bottom: 30px; /* Space below the title */
 }
 
-#googleMap {
+#map {
     width: 90%; /* Adjust width for responsiveness */
     max-width: 800px; /* Limit maximum width for large screens */
     height: 400px; /* Comfortable height for visibility */

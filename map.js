@@ -61,7 +61,7 @@ function initMap() {
   const initialLocation = { lat: 37.459670, lng: 126.950317 };
 
   // Create a new map instance and attach it to the 'googleMap' div
-  map = new google.maps.Map(document.getElementById("googleMap"), {
+  map = new google.maps.Map(document.getElementById("map"), {
     zoom: 14, // Initial zoom level
     center: initialLocation,
   });
