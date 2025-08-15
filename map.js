@@ -59,22 +59,35 @@ async function initMap() {
 
   // Get the map
   map = new Map(document.getElementById("googleMap"), {
-    zoom: 20, // Initial zoom level
-    center: { lat: 37.459670, lng: 126.950317 },  
+    zoom: 30, // Initial zoom level
+    center: { lat: 37.459522, lng: 126.950717 }, 
+    title: "학생회관식당(63) 우측 출구",
     mapId: "TJV_MAP_ID",
   });
   
   // Create images and markers
   const locations = [
-    { position: { lat: 37.460365, lng: 126.952963 } },
-    { position: { lat: 37.459770, lng: 126.950317 } }
+    { position: { lat: 37.459637, lng: 126.950372 } },
+    { position: { lat: 37.459198, lng: 126.952256 } },
+    { position: { lat: 37.459522, lng: 126.950717 } },
+    { position: { lat: 37.459411, lng: 126.950623 } },
+    { position: { lat: 37.465170, lng: 126.951551 } },
+    { position: { lat: 37.463515, lng: 126.949625 } },
+    { position: { lat: 37.466000, lng: 126.961000 } },
+    { position: { lat: 37.467199, lng: 126.952254 } },
+    { position: { lat: 37.463132, lng: 126.952220 } },
+    { position: { lat: 37.462901, lng: 126.951789 } },
+    { position: { lat: 37.466406, lng: 126.952854 } },
+    { position: { lat: 37.464226, lng: 126.954129 } },
+    { position: { lat: 37.459770, lng: 126.950317 } },
+    { position: { lat: 37.460365, lng: 126.952963 } }
   ];
   
   locations.forEach(loc => {
     const imageElement = document.createElement('img');
     imageElement.src = 'tjv.png';
-    imageElement.style.width = '15px';
-    imageElement.style.height = '15px';
+    imageElement.style.width = '25px';
+    imageElement.style.height = '25px';
 
     const marker = new AdvancedMarkerElement({
       position: loc.position, 

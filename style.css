@@ -70,6 +70,7 @@ a:link, a:visited, a:hover, a:active {color:#333;}
     border: 3px solid #2c3e50; /* Dark border for definition */
     border-radius: 10px; /* Rounded corners for elegance */
     box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2); /* Drop shadow for depth */
+    margin: 1em;
 }
 
 .map-controls {
