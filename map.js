@@ -69,14 +69,14 @@ function initMap() {
 
   // Create images
   const imageElement = document.createElement('img');
-  imageElement.src = 'tjv.png'
+  imageElement.src = 'tjv.png';
 
   // Create markers
   const { AdvancedMarkerElement } = new google.maps.importLibrary("marker");
   const marker = new AdvancedMarkerElement(
     { position: { lat: 37.460365, lng: 126.952963 }, title: '인문대 인문관2(2) 2층 휴게공간', content: imageElement, map: map },
     { position: { lat: 37.459770, lng: 126.950317 }, title: '제3식당(75-1)', content: imageElement, map: map }
-  )
+  );
 
 }
 
