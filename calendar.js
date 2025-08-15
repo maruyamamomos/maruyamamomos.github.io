@@ -7,9 +7,9 @@ function initCounters() {
     }
 
     function getAllSavedDates() {
-    let allSavedDates;
-    allSavedDates = localStorage.getItem("savedDate");
-    return allSavedDates;
+        let allSavedDates;
+        allSavedDates = localStorage.getItem("savedDate");
+        return allSavedDates;
     }
 
     initCounters();
@@ -18,18 +18,18 @@ function initCounters() {
 
     // Increment the drink counter and update LocalStorage and display.
     document.getElementById("addDrinkCountBtn").addEventListener("click", function() {
-    let count;
-    count = localStorage.getItem("drinkCount");
-    count++;
-    document.getElementById("drinkCount").value = count;
-    localStorage.setItem("drinkCount", count);
+        let count;
+        count = localStorage.getItem("drinkCount");
+        count++;
+        document.getElementById("drinkCount").value = count;
+        localStorage.setItem("drinkCount", count);
 
-    // save the date
-    let currentDate = new Date();
-    currentDate = currentDate.toISOString().slice(5, 10) + "_" + currentDate.toISOString().slice(11, 16);
-    const beforeDate = localStorage.getItem("savedDate");
-    localStorage.setItem("savedDate", beforeDate + ", " + currentDate);
-    document.getElementById("savedDate").innerText = localStorage.getItem("savedDate") || "->";
+        // save the date
+        let currentDate = new Date();
+        currentDate = currentDate.toISOString().slice(5, 10) + "_" + currentDate.toISOString().slice(11, 16);
+        const beforeDate = localStorage.getItem("savedDate");
+        localStorage.setItem("savedDate", beforeDate + ", " + currentDate);
+        document.getElementById("savedDate").innerText = localStorage.getItem("savedDate") || "->";
     });
     
     // Initialize the drink count.
