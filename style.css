@@ -39,7 +39,7 @@ a:link, a:visited, a:hover, a:active {color:#333;}
 
 .mid2-explanation {
     font-family: 'Roboto', sans-serif; /* Clean, readable font */
-    font-size: 0.7rem; /* Mid-sized explanation */
+    font-size: 0.8rem; /* Mid-sized explanation */
     font-weight: 300; /* Light weight for a softer tone */
     color: #766; /* Medium gray for contrast */
     text-align: center;
@@ -166,7 +166,7 @@ a:link, a:visited, a:hover, a:active {color:#333;}
     max-width: 800px; /* Limit maximum width for large screens */
     max-height: 1000px; /* Comfortable height for visibility */
     border: none;
-    margin: 1em;
+    margin: 2em;
 }
 
 .peopleName {
