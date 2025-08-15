@@ -59,7 +59,7 @@ async function initMap() {
 
   // Get the map
   map = new Map(document.getElementById("googleMap"), {
-    zoom: 13, // Initial zoom level
+    zoom: 10, // Initial zoom level
     center: { lat: 37.459670, lng: 126.950317 },  
     mapId: "TJV_MAP_ID",
   });
