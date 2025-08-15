@@ -36,7 +36,7 @@ document.getElementById("addDrinkCountBtn").addEventListener("click", function()
     let currentDate = new Date(1626143880000);
     currentDate = currentDate.toISOString().slice(5, 10) + "_" + currentDate.toISOString().slice(11, 16);
     const beforeDate = localStorage.getItem("savedDate");
-    localStorage.setItem("savedDate", beforeDate + ", " + currentDate);
+    localStorage.setItem("savedDate", beforeDate + " " + currentDate);
     document.getElementById("savedDate").innerText = localStorage.getItem("savedDate") || "->";
 });
     
