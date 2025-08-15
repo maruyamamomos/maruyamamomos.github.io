@@ -162,3 +162,33 @@ a:link, a:visited, a:hover, a:active {color:#333;}
     border-radius: 8px; /* Creates soft, rounded corners */
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Adds a subtle shadow */
 }
+
+#whoAreWe {
+    width: 90%; /* Adjust width for responsiveness */
+    max-width: 800px; /* Limit maximum width for large screens */
+    max-height: 1000px; /* Comfortable height for visibility */
+    border: none;
+    margin: 1em;
+}
+
+#peopleName {
+    font-family: 'Roboto', sans-serif; /* Clean, readable font */
+    font-size: 1.2rem; 
+    font-weight: 600; 
+    color: #34495e;
+    text-align: left;
+    margin: 2rem auto;
+    max-width: 800px; 
+    line-height: 1.8; /* Improve readability with line height */
+}
+
+#peopleIntro {
+    font-family: 'Roboto', sans-serif; /* Clean, readable font */
+    font-size: 1rem; 
+    font-weight: 300; 
+    color: #34495e;
+    text-align: left;
+    margin: 3rem auto;
+    max-width: 800px; 
+    line-height: 1.8; /* Improve readability with line height */
+}
