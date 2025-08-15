@@ -52,21 +52,19 @@
 
 
 
-// Declare map variable in the global scope
-let map;
-
 // This function will be called by the Google Maps API script
 async function initMap() {
-  // Create a new map instance and attach it to the 'googleMap' div
-  map = new google.maps.Map(document.getElementById("googleMap"), {
-    zoom: 15, // Initial zoom level
+  const { Map } = await google.maps.importLibrary("maps");
+  const { AdvancedMarkerElement } = await google.maps.importLibrary("marker");
+
+  // Get the map
+  map = new Map(document.getElementById("googleMap"), {
+    zoom: 16, // Initial zoom level
     center: { lat: 37.459670, lng: 126.950317 },  
     mapId: "TJV_MAP_ID",
   });
   
   // Create images and markers
-  const { AdvancedMarkerElement } = await google.maps.importLibrary("marker");
-
   const locations = [
     { position: { lat: 37.460365, lng: 126.952963 } },
     { position: { lat: 37.459770, lng: 126.950317 } }
@@ -75,7 +73,9 @@ async function initMap() {
   locations.forEach(loc => {
     const imageElement = document.createElement('img');
     imageElement.src = 'tjv.png';
-    
+    imageElement.style.width = '20px';
+    imageElement.style.height = '20px';
+
     const marker = new AdvancedMarkerElement({
       position: loc.position, 
       content: imageElement,
