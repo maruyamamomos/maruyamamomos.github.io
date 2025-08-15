@@ -42,7 +42,7 @@ a:link, a:visited, a:hover, a:active {color:#333;}
     font-size: 0.7rem; /* Mid-sized explanation */
     font-weight: 300; /* Light weight for a softer tone */
     color: #766; /* Medium gray for contrast */
-    text-align: left;
+    text-align: center;
     margin: 20px auto;
     max-width: 800px; /* Limit width for readability */
     line-height: 1.4; /* Improve readability with line height */
