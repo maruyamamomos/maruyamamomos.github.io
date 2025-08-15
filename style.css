@@ -10,7 +10,12 @@ a:link, a:visited, a:hover, a:active {color:#333;}
 
 /* header {display: flex; justify-content: space-between;} */
 
-.container {display: flex; flex-direction: row; flex-wrap: wrap; justify-content: space-between;}
+.container {
+    display: flex; 
+    flex-direction: row;
+    flex-wrap: wrap; 
+    justify-content: space-between;
+}
 
 .big-title {
     font-family: 'Playfair Display', serif; /* Elegant font for title */
@@ -95,4 +100,33 @@ a:link, a:visited, a:hover, a:active {color:#333;}
 
 .map-controls button:hover {
     background-color: #34495e;
+}
+
+#addDrinkCountBtn {
+  /* Color and Font */
+  background-color: #6F4E37; /* tjv color */
+  color: #FFFFFF;
+  font-family: 'Roboto', Arial, sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  
+  /* Spacing and Sizing */
+  padding: 14px 28px; /* Generous padding for a premium feel */
+  
+  /* Border and Shape */
+  border: none; /* Removes the default browser border */
+  border-radius: 8px; /* Creates soft, rounded corners */
+  
+  /* Effects and Interaction */
+  cursor: pointer; /* Changes the cursor to a hand on hover */
+  transition: all 0.1s ease; /* Makes all changes smooth (hover, active) */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Adds a subtle shadow */
+}
+
+/* --- Hover State --- */
+/* This style applies when the user's mouse is over the button */
+#addDrinkCountBtn:hover {
+  background-color: #85624A; /* A slightly lighter brown for hover */
+  transform: translateY(-2px); /* Lifts the button slightly */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Increases the shadow for a "lifted" effect */
 }
