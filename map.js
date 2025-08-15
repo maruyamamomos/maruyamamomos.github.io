@@ -59,7 +59,7 @@ async function initMap() {
 
   // Get the map
   map = new Map(document.getElementById("googleMap"), {
-    zoom: 10, // Initial zoom level
+    zoom: 20, // Initial zoom level
     center: { lat: 37.459670, lng: 126.950317 },  
     mapId: "TJV_MAP_ID",
   });
@@ -73,8 +73,8 @@ async function initMap() {
   locations.forEach(loc => {
     const imageElement = document.createElement('img');
     imageElement.src = 'tjv.png';
-    imageElement.style.width = '10px';
-    imageElement.style.height = '10px';
+    imageElement.style.width = '15px';
+    imageElement.style.height = '15px';
 
     const marker = new AdvancedMarkerElement({
       position: loc.position, 
