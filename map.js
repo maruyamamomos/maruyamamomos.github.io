@@ -73,8 +73,8 @@ async function initMap() {
   locations.forEach(loc => {
     const imageElement = document.createElement('img');
     imageElement.src = 'tjv.png';
-    imageElement.style.width = '20px';
-    imageElement.style.height = '20px';
+    imageElement.style.width = '10px';
+    imageElement.style.height = '10px';
 
     const marker = new AdvancedMarkerElement({
       position: loc.position, 
