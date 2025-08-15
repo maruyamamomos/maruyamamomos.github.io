@@ -62,7 +62,17 @@ function initMap() {
 
   // Create a new map instance and attach it to the 'googleMap' div
   map = new google.maps.Map(document.getElementById("googleMap"), {
-    zoom: 16, // Initial zoom level
+    zoom: 12, // Initial zoom level
     center: initialLocation,
   });
 }
+
+const beachFlagImg = document.createElement('img');
+beachFlagImg.src = 'tjv.png';
+const beachFlagMarker = new Marker3DElement({
+    position: { lat: 37.460365, lng: 126.952963 },
+});
+const templateForImg = document.createElement('template');
+templateForImg.content.append(beachFlagImg);
+beachFlagMarker.append(templateForImg);
+map.append(beachFlagMarker);
