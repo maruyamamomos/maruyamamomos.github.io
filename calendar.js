@@ -3,7 +3,7 @@ function initCounters() {
     if (localStorage.getItem("drinkCount") == null) {
         localStorage.setItem("drinkCount", 0);
     }
-    document.getElementById("drinkCount").value = localStorage.getItem("drinkCount");
+    // document.getElementById("drinkCount").value = localStorage.getItem("drinkCount"); // ?? duplciated
 };
 
 function getAllSavedDates() {
