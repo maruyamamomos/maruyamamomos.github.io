@@ -57,18 +57,13 @@ let map;
 
 // This function will be called by the Google Maps API script
 async function initMap() {
-  // The location to center the map on (e.g., Seoul)
-  const initialLocation = { lat: 37.459670, lng: 126.950317 };
-
   // Create a new map instance and attach it to the 'googleMap' div
   map = new google.maps.Map(document.getElementById("googleMap"), {
-    zoom: 12, // Initial zoom level
-    center: initialLocation,  
+    zoom: 15, // Initial zoom level
+    center: { lat: 37.459670, lng: 126.950317 },  
     mapId: "TJV_MAP_ID",
   });
-
-  // Create images
-
+  
   // Create images and markers
   const { AdvancedMarkerElement } = await google.maps.importLibrary("marker");
 
@@ -80,11 +75,12 @@ async function initMap() {
   locations.forEach(loc => {
     const imageElement = document.createElement('img');
     imageElement.src = 'tjv.png';
+    
     const marker = new AdvancedMarkerElement({
       position: loc.position, 
       content: imageElement,
       map: map
-    })
+    });
 
   });
 };
