@@ -25,7 +25,7 @@ document.getElementById("addDrinkCountBtn").addEventListener("click", function()
     localStorage.setItem("drinkCount", count);
 
     // save the date
-    let currentDate = new Date();
+    let currentDate = new Date(1626143880000);
     currentDate = currentDate.toISOString().slice(5, 10) + "_" + currentDate.toISOString().slice(11, 16);
     const beforeDate = localStorage.getItem("savedDate");
     localStorage.setItem("savedDate", beforeDate + ", " + currentDate);
