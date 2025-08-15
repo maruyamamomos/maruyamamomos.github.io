@@ -56,28 +56,37 @@
 let map;
 
 // This function will be called by the Google Maps API script
-function initMap() {
+async function initMap() {
   // The location to center the map on (e.g., Seoul)
   const initialLocation = { lat: 37.459670, lng: 126.950317 };
 
   // Create a new map instance and attach it to the 'googleMap' div
   map = new google.maps.Map(document.getElementById("googleMap"), {
-    zoom: 20, // Initial zoom level
+    zoom: 12, // Initial zoom level
     center: initialLocation,  
     mapId: "TJV_MAP_ID",
   });
 
   // Create images
-  const imageElement = document.createElement('img');
-  imageElement.src = 'tjv.png';
 
-  // Create markers
-  const { AdvancedMarkerElement } = new google.maps.importLibrary("marker");
-  const marker = new AdvancedMarkerElement(
-    { position: { lat: 37.460365, lng: 126.952963 }, title: '인문대 인문관2(2) 2층 휴게공간', content: imageElement, map: map },
-    { position: { lat: 37.459770, lng: 126.950317 }, title: '제3식당(75-1)', content: imageElement, map: map }
-  );
+  // Create images and markers
+  const { AdvancedMarkerElement } = await google.maps.importLibrary("marker");
 
+  const locations = [
+    { position: { lat: 37.460365, lng: 126.952963 } },
+    { position: { lat: 37.459770, lng: 126.950317 } }
+  ];
+  
+  locations.forEach(loc => {
+    const imageElement = document.createElement('img');
+    imageElement.src = 'tjv.png';
+    const marker = new AdvancedMarkerElement({
+      position: loc.position, 
+      content: imageElement,
+      map: map
+    })
+
+  });
 };
 
 // const beachFlagImg = document.createElement('img');
