@@ -62,17 +62,31 @@ function initMap() {
 
   // Create a new map instance and attach it to the 'googleMap' div
   map = new google.maps.Map(document.getElementById("googleMap"), {
-    zoom: 12, // Initial zoom level
-    center: initialLocation,
+    zoom: 20, // Initial zoom level
+    center: initialLocation,  
+    mapId: "TJV_MAP_ID",
   });
+
+  // Create images
+  const imageElement = document.createElement('img');
+  imageElement.src = 'tjv.png'
+
+  // Create a marker
+  const { AdvancedMarkerElement } = new google.maps.importLibrary("marker");
+  const marker = new AdvancedMarkerElement(
+    { position: { lat: 37.460365, lng: 126.952963 }, title: '인문대 인문관2(2) 2층 휴게공간', content: imageElement, map: map },
+    { position: { lat: 37.459770, lng: 126.950317 }, title: '제3식당(75-1)', content: imageElement, map: map }
+  )
+  
+
 }
 
-const beachFlagImg = document.createElement('img');
-beachFlagImg.src = 'tjv.png';
-const beachFlagMarker = new Marker3DElement({
-    position: { lat: 37.460365, lng: 126.952963 },
-});
-const templateForImg = document.createElement('template');
-templateForImg.content.append(beachFlagImg);
-beachFlagMarker.append(templateForImg);
-map.append(beachFlagMarker);
+// const beachFlagImg = document.createElement('img');
+// beachFlagImg.src = 'tjv.png';
+// const beachFlagMarker = new Marker3DElement({
+//     position: { lat: 37.460365, lng: 126.952963 },  content: imageElement, map: map
+// });
+// const templateForImg = document.createElement('template');
+// templateForImg.content.append(beachFlagImg);
+// beachFlagMarker.append(templateForImg);
+// map.append(beachFlagMarker);
