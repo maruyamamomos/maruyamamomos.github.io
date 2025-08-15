@@ -1,6 +1,6 @@
 // Initialize counters if not already set, and update the display fields.
 function initCounters() {
-    if (localStorage.getItem("drinkCount") === null) {
+    if (localStorage.getItem("drinkCount") == null) {
         localStorage.setItem("drinkCount", 0);
     }
     document.getElementById("drinkCount").value = localStorage.getItem("drinkCount");
