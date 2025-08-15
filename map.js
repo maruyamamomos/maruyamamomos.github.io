@@ -62,7 +62,7 @@ function initMap() {
 
   // Create a new map instance and attach it to the 'googleMap' div
   map = new google.maps.Map(document.getElementById("googleMap"), {
-    zoom: 14, // Initial zoom level
+    zoom: 16, // Initial zoom level
     center: initialLocation,
   });
 }
