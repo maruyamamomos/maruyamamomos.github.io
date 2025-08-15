@@ -78,7 +78,7 @@ function initMap() {
     { position: { lat: 37.459770, lng: 126.950317 }, title: '제3식당(75-1)', content: imageElement, map: map }
   );
 
-}
+};
 
 // const beachFlagImg = document.createElement('img');
 // beachFlagImg.src = 'tjv.png';
