@@ -109,13 +109,12 @@ a:link, a:visited, a:hover, a:active {color:#333;}
     background-color: #6F4E37; /* tjv color */
     color: #FFFFFF;
     font-family: 'Roboto', Arial, sans-serif;
-    font-size: 15px;
+    font-size: 1rem;
     font-weight: 600;
     
-    padding: 10px 20px; /* Generous padding for a premium feel */
+    padding: 0.25rem 0.5rem;
     
     border: none; /* Removes the default browser border */
-    border-radius: 8px; /* Creates soft, rounded corners */
     
     cursor: pointer; /* Changes the cursor to a hand on hover */
     transition: all 0.1s ease; /* Makes all changes smooth (hover, active) */
@@ -132,13 +131,12 @@ a:link, a:visited, a:hover, a:active {color:#333;}
     background-color: #6F4E37; /* tjv color */
     color: #FFFFFF;
     font-family: 'Roboto', Arial, sans-serif;
-    font-size: 15px;
+    font-size: 1rem;
     font-weight: 600;
     
-    padding: 10px 20px; /* Generous padding for a premium feel */
+    padding: 0.25rem 0.5rem;
     
     border: none; /* Removes the default browser border */
-    border-radius: 8px; /* Creates soft, rounded corners */
     
     cursor: pointer; /* Changes the cursor to a hand on hover */
     transition: all 0.1s ease; /* Makes all changes smooth (hover, active) */
@@ -154,7 +152,7 @@ a:link, a:visited, a:hover, a:active {color:#333;}
     background-color: #FFFFFF;
     color: #6F4E37;
     font-family: 'Roboto', Arial, sans-serif;
-    font-size: 15px;
+    font-size: 1rem;
     font-weight: 600;
     
     padding: 10px 20px;
@@ -163,7 +161,7 @@ a:link, a:visited, a:hover, a:active {color:#333;}
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Adds a subtle shadow */
 }
 
-#whoAreWe {
+.whoAreWe {
     width: 90%; /* Adjust width for responsiveness */
     max-width: 800px; /* Limit maximum width for large screens */
     max-height: 1000px; /* Comfortable height for visibility */
@@ -171,7 +169,7 @@ a:link, a:visited, a:hover, a:active {color:#333;}
     margin: 1em;
 }
 
-#peopleName {
+.peopleName {
     font-family: 'Roboto', sans-serif; /* Clean, readable font */
     font-size: 1.2rem; 
     font-weight: 600; 
@@ -182,7 +180,7 @@ a:link, a:visited, a:hover, a:active {color:#333;}
     line-height: 1.8; /* Improve readability with line height */
 }
 
-#peopleIntro {
+.peopleIntro {
     font-family: 'Roboto', sans-serif; /* Clean, readable font */
     font-size: 1rem; 
     font-weight: 300; 
