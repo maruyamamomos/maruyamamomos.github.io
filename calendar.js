@@ -6,13 +6,21 @@ function initCounters() {
     document.getElementById("drinkCount").value = localStorage.getItem("drinkCount"); // ?? duplciated
 };
 
-function getAllSavedDates() {
-    let allSavedDates;
-    allSavedDates = localStorage.getItem("savedDate");
-    return allSavedDates;
+function initSavedDate() {
+    if (localStorage.getItem("savedDate") === null) {
+        localStorage.setItem("savedDate", "");
+    }
+    document.getElementById("drinkCount").innerText = localStorage.getItem("drinkCount"); // ?? duplciated
 };
 
+// function getAllSavedDates() {
+//     let allSavedDates;
+//     allSavedDates = localStorage.getItem("savedDate");
+//     return allSavedDates;
+// };
+
 initCounters();
+initSavedDate();
 document.getElementById("drinkCount").value = localStorage.getItem("drinkCount");
 document.getElementById("savedDate").innerText = localStorage.getItem("savedDate") || "->"; // getAllSavedDates();
 
