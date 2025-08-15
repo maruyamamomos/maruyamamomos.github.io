@@ -49,17 +49,20 @@
 //     createCustomMarker(data.position, data.title);
 //   });
   
+
+
+
 // Declare map variable in the global scope
 let map;
 
 // This function will be called by the Google Maps API script
 function initMap() {
   // The location to center the map on (e.g., Seoul)
-  const initialLocation = { lat: 37.5665, lng: 126.9780 };
+  const initialLocation = { lat: 37.459670, lng: 126.950317 };
 
   // Create a new map instance and attach it to the 'googleMap' div
   map = new google.maps.Map(document.getElementById("googleMap"), {
-    zoom: 12, // Initial zoom level
+    zoom: 14, // Initial zoom level
     center: initialLocation,
   });
 }
