@@ -34,9 +34,12 @@
     <div class="content">
         <h1 class="map-title">데자와, 그대는 어디에?</h1>
 
-        <div class="basicBox" id="googleMap"></div>
+        <div class="basicBox">
+            <div id="googleMap"></div>
+        </div>
         
         <div class="map-controls">
+            <!-- 이쪽은 직접 확인 완료 -->
             <button onclick="map.setCenter({ lat: 37.459637, lng: 126.950372 })">학생회관식당(63) 우측 출구</button>
             <button onclick="map.setCenter({ lat: 37.459198, lng: 126.952256 })">중앙도서관(62) 중도터널</button>
             <button onclick="map.setCenter({ lat: 37.459522, lng: 126.950717 })">학생회관식당(63) 좌측</button>
