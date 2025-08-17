@@ -23,7 +23,7 @@ a:link, a:visited, a:hover, a:active {color:#333;}
 
 .big-title {
     font-family: 'Playfair Display', serif; /* Elegant font for title */
-    font-size: 4rem; /* Big title size */
+    font-size: 3.5rem; /* Big title size */
     font-weight: 700; /* Bold weight for emphasis */
     color: #2c3e50; /* Rich dark blue color */
     text-align: center;
