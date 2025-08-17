@@ -79,7 +79,21 @@ async function initMap() {
     { position: { lat: 37.466406, lng: 126.952854 } },
     { position: { lat: 37.464226, lng: 126.954129 } },
     { position: { lat: 37.459770, lng: 126.950317 } },
-    { position: { lat: 37.460365, lng: 126.952963 } }
+    { position: { lat: 37.460365, lng: 126.952963 } },
+
+    // 이쪽은 약간의 좌표 수정이 필요함
+    { position: { lat: 37.464734, lng: 126.959815 } },
+    { position: { lat: 37.467197, lng: 126.952252 } },
+    { position: { lat: 37.455199, lng: 126.952026 } },
+    { position: { lat: 37.468113, lng: 126.953039 } },
+    { position: { lat: 37.457633, lng: 126.948707 } },
+    { position: { lat: 37.457634, lng: 126.948708 } },
+    { position: { lat: 37.465911, lng: 126.960980 } },
+    { position: { lat: 37.460141, lng: 126.948569 } },
+    { position: { lat: 37.458334, lng: 126.953045 } },
+    { position: { lat: 37.451865, lng: 126.952489 } },
+    { position: { lat: 37.457674, lng: 126.954046 } },
+    { position: { lat: 37.464734, lng: 126.954781 } } 
   ];
   
   locations.forEach(loc => {
