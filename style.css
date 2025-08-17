@@ -17,6 +17,8 @@ a:link, a:visited, a:hover, a:active {color:#333;}
     justify-content: space-between;
     font-size: 1.5rem;
     height: 3rem auto;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .big-title {
@@ -41,7 +43,7 @@ a:link, a:visited, a:hover, a:active {color:#333;}
 
 .mid2-explanation {
     font-family: 'Roboto', sans-serif; /* Clean, readable font */
-    font-size: 0.8rem; /* Mid-sized explanation */
+    font-size: 1rem; /* Mid-sized explanation */
     font-weight: 300; /* Light weight for a softer tone */
     color: #766; /* Medium gray for contrast */
     text-align: center;
@@ -112,7 +114,7 @@ a:link, a:visited, a:hover, a:active {color:#333;}
     color: #FFFFFF;
     font-family: 'Roboto', Arial, sans-serif;
     font-size: 1rem;
-    font-weight: 600;
+    font-weight: 400;
     
     padding: 0.25rem 0.5rem;
     
@@ -134,7 +136,7 @@ a:link, a:visited, a:hover, a:active {color:#333;}
     color: #FFFFFF;
     font-family: 'Roboto', Arial, sans-serif;
     font-size: 1rem;
-    font-weight: 600;
+    font-weight: 400;
     
     padding: 0.25rem 0.5rem;
     
@@ -163,6 +165,18 @@ a:link, a:visited, a:hover, a:active {color:#333;}
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Adds a subtle shadow */
 }
 
+#calendarText {
+    background-color: #FFFFFF;
+    color: #34495e;
+    font-family: 'Roboto', Arial, sans-serif;
+    font-size: 1rem;
+    font-weight: 300;
+    
+    padding: 1rem 1rem auto;
+    text-align: left;
+    line-height: normal;
+}
+
 .basicBox {
     width: 80%; /* Adjust width for responsiveness */
     max-width: 800px; /* Limit maximum width for large screens */
@@ -178,6 +192,7 @@ a:link, a:visited, a:hover, a:active {color:#333;}
     color: #34495e;
     text-align: left;
     margin: 1rem auto;
+    margin-top: 2rem;
     max-width: 800px; 
     line-height: 1.8; /* Improve readability with line height */
 }

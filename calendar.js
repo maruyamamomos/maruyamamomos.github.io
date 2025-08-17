@@ -33,17 +33,23 @@ document.getElementById("addDrinkCountBtn").addEventListener("click", function()
     localStorage.setItem("drinkCount", count);
 
     // save the date
-    let currentDate = new Date(1626143880000);
-    currentDate = currentDate.toISOString().slice(5, 10) + "_" + currentDate.toISOString().slice(11, 16);
-    const beforeDate = localStorage.getItem("savedDate");
-    localStorage.setItem("savedDate", beforeDate + " " + currentDate);
-    document.getElementById("savedDate").innerText = localStorage.getItem("savedDate") || "->";
+    let currentDate = new Date();
+    const options = {
+        timeZone: 'Asia/Seoul',
+        dateStyle: 'short'
+    };
+    const koreanFormatter = new Intl.DateTimeFormat('ko-KR', options);
+    const formattedDate = koreanFormatter.format(currentDate);
+    const savedDate = localStorage.getItem("savedDate");
+
+    localStorage.setItem("savedDate", savedDate + "\n" + formattedDate);
+    document.getElementById("savedDate").innerText = localStorage.getItem("savedDate");
 });
     
 // Initialize the drink count.
 document.getElementById("initDrinkCountBtn").addEventListener("click", function() {
     localStorage.setItem("drinkCount", 0);
-    localStorage.setItem("savedDate", "->");
-    document.getElementById("savedDate").innerText = "->";
+    localStorage.setItem("savedDate", "");
+    document.getElementById("savedDate").innerText = "";
     document.getElementById("drinkCount").value = 0;
 });
