@@ -80,6 +80,9 @@ async function initMap() {
     { position: { lat: 37.464226, lng: 126.954129 } },
     { position: { lat: 37.459770, lng: 126.950317 } },
     { position: { lat: 37.460365, lng: 126.952963 } },
+    { position: { lat: 37.450206, lng: 126.952491 } },
+    { position: { lat: 37.448822, lng: 126.951699 } },
+    { position: { lat: 37.448733, lng: 126.952495 } },
 
     // 이쪽은 약간의 좌표 수정이 필요함
     { position: { lat: 37.464734, lng: 126.959815 } },
