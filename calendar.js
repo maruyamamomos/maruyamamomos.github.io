@@ -22,7 +22,7 @@ function initSavedDate() {
 initCounters();
 initSavedDate();
 document.getElementById("drinkCount").value = localStorage.getItem("drinkCount");
-document.getElementById("savedDate").innerText = localStorage.getItem("savedDate") || "->"; // getAllSavedDates();
+document.getElementById("savedDate").innerText = localStorage.getItem("savedDate") || ""; // getAllSavedDates();
 
 // Increment the drink counter and update LocalStorage and display.
 document.getElementById("addDrinkCountBtn").addEventListener("click", function() {
