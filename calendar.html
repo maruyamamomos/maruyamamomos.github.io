@@ -29,18 +29,20 @@
         </div>
     </header>
     <script src="calendar.js" defer></script>
-    <div class="basicBox">
-        <p class="peopleIntro">언제 데자와를 먹었는지 간단하게 기록하는 곳입니다.버튼을 눌러 데자와를 마신 숫자를 늘려 보세요.</p>
-        <div class="counter-group">
-            <label for="drinkCount" id="calendarText">Drink Count:</label>
-            <input type="text" id="drinkCount" readonly> 
-            <button id="addDrinkCountBtn">Add Te Java Count</button>
-            <button id="initDrinkCountBtn">Init Te Java Count</button>
+    <section  class="expert-mini" id="expert-mini">
+        <div class="basicBox">
+            <p class="peopleIntro">언제 데자와를 먹었는지 간단하게 기록하는 곳입니다. 버튼을 눌러 데자와를 마신 숫자를 늘려 보세요.</p>
+            <div class="counter-group">
+                <label for="drinkCount" id="calendarText">Drink Count:</label>
+                <input type="text" id="drinkCount" readonly> 
+                <button id="addDrinkCountBtn">Add Te Java Count</button>
+                <button id="initDrinkCountBtn">Init Te Java Count</button>
+            </div>
+            <div>
+                <label for="savedDate" id="calendarText">Drink Dates:</label>
+                <h4><span id="savedDate"></span></h4>
+            </div>
         </div>
-        <div>
-            <label for="savedDate" id="calendarText">Drink Dates:</label>
-            <h4><span id="savedDate"></span></h4>
-        </div>
-    </div>
+    </section>
 </body>
 </html>
