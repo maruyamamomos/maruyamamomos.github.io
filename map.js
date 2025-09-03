@@ -59,7 +59,7 @@ async function initMap() {
 
   // Get the map
   map = new Map(document.getElementById("googleMap"), {
-    zoom: 20, // Initial zoom level
+    zoom: 18, // Initial zoom level
     center: { lat: 37.459637, lng: 126.950372 }, // position: 학생회관식당(63) 우측 출구
     mapId: "TJV_MAP_ID",  
   });

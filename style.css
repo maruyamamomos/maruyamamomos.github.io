@@ -2,7 +2,7 @@ body {
     font-family: 'Roboto', sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f9f9f9; /* Light background for elegance */
+    background-color: #6F4E37; /* Light background for elegance */
     color: #333; /* Dark gray text for readability */
 }
 
@@ -19,6 +19,7 @@ a:link, a:visited, a:hover, a:active {color:#333;}
     height: 3rem auto;
     margin-left: auto;
     margin-right: auto;
+    padding: auto;
 }
 
 .big-title {
@@ -58,7 +59,7 @@ a:link, a:visited, a:hover, a:active {color:#333;}
     align-items: center;
     justify-content: center;
     min-height: 100vh; /* Full viewport height */
-    background-color: #ffffff; /* Clean white background for the section */
+    background-color: #f6f6f6; /* Clean white background for the section */
     padding: 20px;
     box-shadow: 0px -4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
 }
@@ -69,7 +70,7 @@ a:link, a:visited, a:hover, a:active {color:#333;}
     align-items: center;
     justify-content: center;
     min-height: 50vh; /* Full viewport height */
-    background-color: #ffffff; /* Clean white background for the section */
+    background-color: #f6f6f6; /* Clean white background for the section */
     padding: 20px;
     box-shadow: 0px -4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
 }
@@ -105,7 +106,7 @@ a:link, a:visited, a:hover, a:active {color:#333;}
 
 .map-controls button {
     background-color: #2c3e50;
-    color: #fff;
+    color: #f6f6f6;
     font-family: 'Roboto', Arial, sans-serif;
     font-size: 1rem;
     padding: 10px 15px;
@@ -125,7 +126,7 @@ a:link, a:visited, a:hover, a:active {color:#333;}
 #addDrinkCountBtn {
     /* Color and Font */
     background-color: #6F4E37; /* tjv color */
-    color: #FFFFFF;
+    color: #f6f6f6;
     font-family: 'Roboto', Arial, sans-serif;
     font-size: 1rem;
     font-weight: 400;
@@ -147,7 +148,7 @@ a:link, a:visited, a:hover, a:active {color:#333;}
 #initDrinkCountBtn {
     /* Color and Font */
     background-color: #6F4E37; /* tjv color */
-    color: #FFFFFF;
+    color: #f6f6f6;
     font-family: 'Roboto', Arial, sans-serif;
     font-size: 1rem;
     font-weight: 400;
@@ -167,7 +168,7 @@ a:link, a:visited, a:hover, a:active {color:#333;}
 }
 
 #drinkCount {
-    background-color: #FFFFFF;
+    background-color: #f6f6f6;
     color: #6F4E37;
     font-family: 'Roboto', Arial, sans-serif;
     font-size: 1rem;
@@ -180,7 +181,7 @@ a:link, a:visited, a:hover, a:active {color:#333;}
 }
 
 #calendarText {
-    background-color: #FFFFFF;
+    background-color: #f6f6f6;
     color: #34495e;
     font-family: 'Roboto', Arial, sans-serif;
     font-size: 1rem;
@@ -218,6 +219,18 @@ a:link, a:visited, a:hover, a:active {color:#333;}
     color: #34495e;
     text-align: left;
     margin: 1rem auto;
+    max-width: 800px; 
+    line-height: 1.8; /* Improve readability with line height */
+}
+
+.lastWords {
+    font-family: 'Roboto', sans-serif; /* Clean, readable font */
+    font-size: 1.0rem; 
+    font-weight: 600; 
+    color: #34495e;
+    text-align: center;
+    margin: 1rem auto;
+    margin-top: 2rem;
     max-width: 800px; 
     line-height: 1.8; /* Improve readability with line height */
 }
