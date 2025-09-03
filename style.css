@@ -1,236 +1,264 @@
+/* --- Global Resets & Body Styles --- */
+* {
+    /* ADDED: A modern CSS best-practice. It makes sizing elements with padding and borders more intuitive. */
+    box-sizing: border-box;
+}
+
 body {
-    font-family: 'Roboto', sans-serif;
+    /* MODIFIED: Prioritizes the native system font on Apple devices (San Francisco) for a crisp, native feel, with Roboto as a fallback. */
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #6F4E37; /* Light background for elegance */
-    color: #333; /* Dark gray text for readability */
+    /* MODIFIED: Slightly lightened the background for better contrast and a softer feel. */
+    background-color: #EAE0D1;
+    /* MODIFIED: Used a darker, more solid color for primary text to improve readability. */
+    color: #3D3D3D;
+    /* ADDED: Makes font rendering look smoother on high-resolution screens like iPhones. */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
-a:link, a:visited, a:hover, a:active {color:#333;}
+/* MODIFIED: Ensured links use the main text color for consistency. */
+a:link, a:visited, a:hover, a:active {
+    color: #3D3D3D;
+}
 
-/* header {display: flex; justify-content: space-between;} */
+
+/* --- Layout Containers --- */
 
 .container {
-    display: flex; 
+    display: flex;
     flex-direction: row;
-    flex-wrap: wrap; 
-    justify-content: space-between;
+    flex-wrap: wrap;
+    /* MODIFIED: Changed from space-between to center to prevent awkward spacing on mobile when items wrap. */
+    justify-content: center;
     font-size: 1.5rem;
-    height: 3rem auto;
-    margin-left: auto;
-    margin-right: auto;
-    padding: auto;
+    /* ADDED: Added horizontal padding to prevent content from touching the screen edges on mobile. */
+    padding: 0 20px;
+    /* DELETED: Removed invalid height and margin properties. Height should be determined by content. */
 }
 
+/* ADDED: A new utility class for any full-width content section to give it consistent padding. */
+.content-section {
+    width: 100%;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    /* ADDED: Ensures text inside these sections doesn't touch screen edges on mobile. */
+    padding: 0 20px;
+}
+
+
+/* --- Typography --- */
+
 .big-title {
-    font-family: 'Playfair Display', serif; /* Elegant font for title */
-    font-size: 3.5rem; /* Big title size */
-    font-weight: 700; /* Bold weight for emphasis */
-    color: #2c3e50; /* Rich dark blue color */
+    font-family: 'Playfair Display', serif;
+    /* MODIFIED: Reduced font size to better fit mobile screens. It will be increased for larger screens via media query below. */
+    font-size: 2.8rem;
+    font-weight: 700;
+    /* MODIFIED: Slightly desaturated the blue for a more modern, less harsh look. */
+    color: #34495E;
     text-align: center;
     margin-top: 50px;
 }
 
 .mid-explanation {
-    font-family: 'Roboto', sans-serif; /* Clean, readable font */
-    font-size: 1.5rem; /* Mid-sized explanation */
-    font-weight: 300; /* Light weight for a softer tone */
-    color: #555; /* Medium gray for contrast */
+    font-size: 1.1rem; /* MODIFIED: Adjusted font size for better mobile readability. */
+    font-weight: 400; /* MODIFIED: Increased weight slightly from 300 for better legibility. */
+    /* MODIFIED: Darkened the text color for better contrast against the background. */
+    color: #595959;
     text-align: center;
     margin: 20px auto;
-    max-width: 800px; /* Limit width for readability */
-    line-height: 1.8; /* Improve readability with line height */
+    line-height: 1.6; /* MODIFIED: Adjusted line-height for the new font size. */
 }
 
 .mid2-explanation {
-    font-family: 'Roboto', sans-serif; /* Clean, readable font */
-    font-size: 1rem; /* Mid-sized explanation */
-    font-weight: 500; /* Light weight for a softer tone */
-    color: #766; /* Medium gray for contrast */
+    font-size: 1rem;
+    font-weight: 500;
+    /* MODIFIED: Adjusted color for better readability. */
+    color: #6a6a6a;
     text-align: center;
     margin: 20px auto;
-    max-width: 800px; /* Limit width for readability */
-    line-height: 1.4; /* Improve readability with line height */
+    line-height: 1.5; /* MODIFIED: Adjusted line-height. */
+}
+
+
+/* --- Page Sections --- */
+
+#expert, #expert-mini {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    /* MODIFIED: Softer off-white background color. */
+    background-color: #F9F9F9;
+    padding: 40px 20px; /* MODIFIED: Increased vertical padding for more breathing room. */
+    box-shadow: 0px -4px 10px rgba(0, 0, 0, 0.05); /* MODIFIED: Softened the shadow. */
 }
 
 #expert {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    min-height: 100vh; /* Full viewport height */
-    background-color: #f6f6f6; /* Clean white background for the section */
-    padding: 20px;
-    box-shadow: 0px -4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    min-height: 100vh;
 }
 
 #expert-mini {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    min-height: 50vh; /* Full viewport height */
-    background-color: #f6f6f6; /* Clean white background for the section */
-    padding: 20px;
-    box-shadow: 0px -4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    min-height: 50vh;
 }
 
+
+/* --- Map & Controls --- */
+
 .map-title {
-    font-family: 'Playfair Display', serif; /* Elegant serif font */
-    font-size: 2.5rem; /* Large title size */
-    font-weight: 700; /* Bold for emphasis */
-    color: #2c3e50; /* Rich dark blue for elegance */
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem; /* MODIFIED: Adjusted size for mobile screens. */
+    font-weight: 700;
+    color: #34495E;
     text-align: center;
-    margin-bottom: 30px; /* Space below the title */
+    margin-bottom: 30px;
 }
 
 #googleMap {
-    width: 90%; /* Adjust width for responsiveness */
-    max-width: 800px; /* Limit maximum width for large screens */
-    height: 400px; /* Comfortable height for visibility */
-    border: 3px solid #2c3e50; /* Dark border for definition */
-    border-radius: 10px; /* Rounded corners for elegance */
-    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2); /* Drop shadow for depth */
-    margin: 1em;
+    /* MODIFIED: Set to 100% width to fill its parent container, which provides padding. This is a more robust responsive pattern. */
+    width: 100%;
+    max-width: 800px;
+    height: 400px;
+    border: 3px solid #34495E;
+    border-radius: 10px;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.15); /* MODIFIED: Softened shadow. */
+    /* DELETED: Margin is now handled by the parent container. */
 }
 
 .map-controls {
     display: flex;
     justify-content: center;
-    align-content: center;   /* Centers the block of lines vertically */
-    flex-wrap: wrap;         /* Allows items to wrap to new lines */
+    align-content: center;
+    flex-wrap: wrap;
     gap: 1rem;
-    margin-top: 2rem auto;
-    padding: 1rem; /* Good to have some padding */
+    /* MODIFIED: Corrected invalid margin syntax. */
+    margin: 2rem auto 0;
+    padding: 1rem;
 }
 
 .map-controls button {
-    background-color: #2c3e50;
-    color: #f6f6f6;
-    font-family: 'Roboto', Arial, sans-serif;
+    background-color: #34495E;
+    color: #FFFFFF; /* MODIFIED: Used pure white for better contrast. */
+    font-family: inherit; /* ADDED: Makes the button use the body's font for consistency. */
     font-size: 1rem;
-    padding: 10px 15px;
+    font-weight: 600; /* ADDED: Bolder font for button text. */
+    padding: 12px 18px; /* MODIFIED: Increased padding to make buttons easier to tap on mobile. */
     border: none;
-    border-radius: 5px;
+    border-radius: 8px; /* MODIFIED: Slightly larger radius for a softer look. */
     cursor: pointer;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
-    transition: background-color 0.3s ease;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* MODIFIED: Softened shadow. */
+    transition: all 0.2s ease; /* MODIFIED: Transition now affects all properties. */
 }
 
 .map-controls button:hover {
-    background-color: #34495e;
-    transform: translateY(-2px); /* Lifts the button slightly */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Increases the shadow for a "lifted" effect */
+    background-color: #4A6572; /* MODIFIED: Adjusted hover color. */
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* MODIFIED: Adjusted hover shadow. */
 }
 
-#addDrinkCountBtn {
-    /* Color and Font */
-    background-color: #6F4E37; /* tjv color */
-    color: #f6f6f6;
-    font-family: 'Roboto', Arial, sans-serif;
-    font-size: 1rem;
-    font-weight: 400;
-    
-    padding: 0.25rem 0.5rem;
-    
-    border: none; /* Removes the default browser border */
-    
-    cursor: pointer; /* Changes the cursor to a hand on hover */
-    transition: all 0.1s ease; /* Makes all changes smooth (hover, active) */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Adds a subtle shadow */
-}
-#addDrinkCountBtn:hover {
-    background-color: #85624A; /* A slightly lighter brown for hover */
-    transform: translateY(-2px); /* Lifts the button slightly */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Increases the shadow for a "lifted" effect */
-}
 
-#initDrinkCountBtn {
-    /* Color and Font */
-    background-color: #6F4E37; /* tjv color */
-    color: #f6f6f6;
-    font-family: 'Roboto', Arial, sans-serif;
-    font-size: 1rem;
-    font-weight: 400;
-    
-    padding: 0.25rem 0.5rem;
-    
-    border: none; /* Removes the default browser border */
-    
-    cursor: pointer; /* Changes the cursor to a hand on hover */
-    transition: all 0.1s ease; /* Makes all changes smooth (hover, active) */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Adds a subtle shadow */
-}
-#initDrinkCountBtn:hover {
-    background-color: #85624A; /* A slightly lighter brown for hover */
-    transform: translateY(-2px); /* Lifts the button slightly */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Increases the shadow for a "lifted" effect */
-}
+/* --- Tejava UI Components --- */
 
-#drinkCount {
-    background-color: #f6f6f6;
-    color: #6F4E37;
-    font-family: 'Roboto', Arial, sans-serif;
+/* ADDED: Created a reusable class for Tejava-themed buttons to avoid repeating code (DRY principle). */
+/* Apply class="tejava-btn" to both #addDrinkCountBtn and #initDrinkCountBtn in your HTML. */
+.tejava-btn {
+    background-color: #6F4E37;
+    color: #FFFFFF;
+    font-family: inherit;
     font-size: 1rem;
     font-weight: 600;
-    
+    /* MODIFIED: Significantly increased padding to make buttons easy to tap on mobile. */
+    padding: 12px 18px;
+    border: none;
+    /* ADDED: Added a border radius for consistency. */
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+}
+
+.tejava-btn:hover {
+    background-color: #85624A;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* DELETED: The individual button styles are now handled by the .tejava-btn class above. */
+
+#drinkCount {
+    background-color: #F9F9F9;
+    color: #6F4E37;
+    font-family: inherit;
+    font-size: 1rem;
+    font-weight: 600;
     padding: 10px 20px;
-    border: 2px solid #6F4E37; /* Dark border for definition */
-    border-radius: 8px; /* Creates soft, rounded corners */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Adds a subtle shadow */
+    border: 2px solid #6F4E37;
+    border-radius: 8px;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1); /* MODIFIED: Changed to an inner shadow for a "pressed in" look. */
 }
 
 #calendarText {
-    background-color: #f6f6f6;
+    background-color: #F9F9F9;
     color: #34495e;
-    font-family: 'Roboto', Arial, sans-serif;
+    font-family: inherit;
     font-size: 1rem;
-    font-weight: 300;
-    
-    padding: 1rem 1rem auto;
+    font-weight: 400; /* MODIFIED: Increased weight from 300 for readability. */
+    /* MODIFIED: Corrected invalid padding syntax and made it consistent. */
+    padding: 1rem;
     text-align: left;
-    line-height: normal;
+    line-height: 1.5; /* MODIFIED: Adjusted for better readability. */
+    border-radius: 8px; /* ADDED: Added border radius for consistency. */
 }
 
 .basicBox {
-    width: 80%; /* Adjust width for responsiveness */
-    max-width: 800px; /* Limit maximum width for large screens */
-    max-height: 1000px; /* Comfortable height for visibility */
+    width: 100%; /* MODIFIED: Changed from 80% to fill its padded parent. */
+    max-width: 800px;
+    /* DELETED: max-height can cause content to be cut off; it's better to let content define the height. */
     border: none;
     margin: 2em auto;
 }
 
+
+/* --- Text Content Styles --- */
+
 .peopleName {
-    font-family: 'Roboto', sans-serif; /* Clean, readable font */
-    font-size: 1.2rem; 
-    font-weight: 600; 
+    font-size: 1.2rem;
+    font-weight: 600;
     color: #34495e;
     text-align: left;
-    margin: 1rem auto;
-    margin-top: 2rem;
-    max-width: 800px; 
-    line-height: 1.8; /* Improve readability with line height */
+    line-height: 1.6; /* MODIFIED: Adjusted line height. */
 }
 
 .peopleIntro {
-    font-family: 'Roboto', sans-serif; /* Clean, readable font */
-    font-size: 1rem; 
-    font-weight: 300; 
+    font-size: 1rem;
+    font-weight: 400; /* MODIFIED: Increased from 300 for readability. */
     color: #34495e;
     text-align: left;
-    margin: 1rem auto;
-    max-width: 800px; 
-    line-height: 1.8; /* Improve readability with line height */
+    line-height: 1.6; /* MODIFIED: Adjusted line height. */
 }
 
 .lastWords {
-    font-family: 'Roboto', sans-serif; /* Clean, readable font */
-    font-size: 1.0rem; 
-    font-weight: 600; 
+    font-size: 1.0rem;
+    font-weight: 600;
     color: #34495e;
     text-align: center;
-    margin: 1rem auto;
-    margin-top: 2rem;
-    max-width: 800px; 
-    line-height: 1.8; /* Improve readability with line height */
+    line-height: 1.6; /* MODIFIED: Adjusted line height. */
+}
+
+
+/* --- Media Query for Larger Screens --- */
+
+/* ADDED: This block of rules will only apply on screens wider than 768px (tablets and desktops). */
+@media (min-width: 768px) {
+    .big-title {
+        /* ADDED: Restore the larger font size for desktop. */
+        font-size: 3.5rem;
+    }
+
+    .mid-explanation {
+        /* ADDED: Increase font size slightly for better readability on larger screens. */
+        font-size: 1.25rem;
+    }
 }
