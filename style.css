@@ -25,11 +25,11 @@ a:link, a:visited, a:hover, a:active {color:#333;}
 
 .big-title {
     font-family: 'Playfair Display', serif; /* Elegant font for title */
-    font-size: 3.5rem; /* Big title size */
+    font-size: 3.0rem; /* Big title size */
     font-weight: 700; /* Bold weight for emphasis */
     color: #2c3e50; /* Rich dark blue color */
     text-align: center;
-    margin-top: 50px;
+    margin-top: 30px;
 }
 
 .mid-explanation {
@@ -70,7 +70,7 @@ a:link, a:visited, a:hover, a:active {color:#333;}
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    min-height: 50vh; /* Full viewport height */
+    min-height: 45vh; /* Full viewport height */
     background-color: #f6f6f6; /* Clean white background for the section */
     padding: 20px;
     box-shadow: 0px -4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
@@ -78,7 +78,7 @@ a:link, a:visited, a:hover, a:active {color:#333;}
 
 .map-title {
     font-family: 'Playfair Display', serif; /* Elegant serif font */
-    font-size: 2.5rem; /* Large title size */
+    font-size: 2.0rem; /* Large title size */
     font-weight: 700; /* Bold for emphasis */
     color: #2c3e50; /* Rich dark blue for elegance */
     text-align: center;
@@ -203,7 +203,7 @@ a:link, a:visited, a:hover, a:active {color:#333;}
 
 .peopleName {
     font-family: 'Roboto', sans-serif; /* Clean, readable font */
-    font-size: 1.2rem; 
+    font-size: 1.0rem; 
     font-weight: 600; 
     color: #34495e;
     text-align: left;
@@ -215,7 +215,7 @@ a:link, a:visited, a:hover, a:active {color:#333;}
 
 .peopleIntro {
     font-family: 'Roboto', sans-serif; /* Clean, readable font */
-    font-size: 1rem; 
+    font-size: 0.8rem; 
     font-weight: 300; 
     color: #34495e;
     text-align: left;
