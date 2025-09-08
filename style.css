@@ -16,7 +16,7 @@ a:link, a:visited, a:hover, a:active {color:#333;}
     flex-direction: row;
     flex-wrap: wrap; 
     justify-content: space-between;
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     height: 3rem auto;
     margin-left: auto;
     margin-right: auto;
@@ -38,9 +38,9 @@ a:link, a:visited, a:hover, a:active {color:#333;}
     font-weight: 300; /* Light weight for a softer tone */
     color: #555; /* Medium gray for contrast */
     text-align: center;
-    margin: 20px auto;
+    margin: 15px auto;
     max-width: 800px; /* Limit width for readability */
-    line-height: 1.8; /* Improve readability with line height */
+    line-height: 1.5; /* Improve readability with line height */
 }
 
 .mid2-explanation {
@@ -100,9 +100,9 @@ a:link, a:visited, a:hover, a:active {color:#333;}
     justify-content: center;
     align-content: center;   /* Centers the block of lines vertically */
     flex-wrap: wrap;         /* Allows items to wrap to new lines */
-    gap: 0.5rem auto;
+    gap: 0.7rem auto;
     margin-top: 1.5rem auto;
-    padding: 0.5rem; /* Good to have some padding */
+    padding: 0.7rem; /* Good to have some padding */
 }
 
 .map-controls button {
@@ -200,7 +200,7 @@ a:link, a:visited, a:hover, a:active {color:#333;}
     max-width: 800px; /* Limit maximum width for large screens */
     max-height: 1000px; /* Comfortable height for visibility */
     border: none;
-    margin: 2em auto;
+    margin: 1.6em auto;
 }
 
 .peopleName {
