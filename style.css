@@ -51,7 +51,7 @@ a:link, a:visited, a:hover, a:active {color:#333;}
     text-align: center;
     margin: 20px auto;
     max-width: 800px; /* Limit width for readability */
-    line-height: 1.4; /* Improve readability with line height */
+    line-height: 1.2; /* Improve readability with line height */
 }
 
 #expert {
@@ -100,7 +100,7 @@ a:link, a:visited, a:hover, a:active {color:#333;}
     justify-content: center;
     align-content: center;   /* Centers the block of lines vertically */
     flex-wrap: wrap;         /* Allows items to wrap to new lines */
-    gap: 0.7rem auto;
+    gap: 0.9rem auto;
     margin-top: 1.5rem auto;
     padding: 0.7rem; /* Good to have some padding */
 }
