@@ -3,13 +3,11 @@ body {
     font-family: 'Roboto', sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #EAE0D1; /* Light background for elegance */
-    color: #333; /* Dark gray text for readability */
+    background-color: #EAE0D1; 
+    color: #333;
 }
 
 a:link, a:visited, a:hover, a:active {color:#333;}
-
-/* header {display: flex; justify-content: space-between;} */
 
 .container {
     display: flex; 
@@ -24,34 +22,34 @@ a:link, a:visited, a:hover, a:active {color:#333;}
 }
 
 .big-title {
-    font-family: 'Playfair Display', serif; /* Elegant font for title */
-    font-size: 3.0rem; /* Big title size */
-    font-weight: 700; /* Bold weight for emphasis */
-    color: #2c3e50; /* Rich dark blue color */
+    font-family: 'Playfair Display', serif;
+    font-size: 3.0rem; 
+    font-weight: 700;  
+    color: #2c3e50;  
     text-align: center;
     margin-top: 30px;
 }
 
 .mid-explanation {
-    font-family: 'Roboto', sans-serif; /* Clean, readable font */
-    font-size: 1.5rem; /* Mid-sized explanation */
-    font-weight: 300; /* Light weight for a softer tone */
-    color: #555; /* Medium gray for contrast */
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.5rem;  
+    font-weight: 300; 
+    color: #555; 
     text-align: center;
     margin: 15px auto;
-    max-width: 800px; /* Limit width for readability */
-    line-height: 1.5; /* Improve readability with line height */
+    max-width: 800px; 
+    line-height: 1.5; 
 }
 
 .mid2-explanation {
-    font-family: 'Roboto', sans-serif; /* Clean, readable font */
-    font-size: 1rem; /* Mid-sized explanation */
-    font-weight: 500; /* Light weight for a softer tone */
-    color: #766; /* Medium gray for contrast */
+    font-family: 'Roboto', sans-serif; 
+    font-size: 1rem; 
+    font-weight: 500; 
+    color: #766; 
     text-align: center;
     margin: 20px auto;
-    max-width: 800px; /* Limit width for readability */
-    line-height: 1.2; /* Improve readability with line height */
+    max-width: 800px; 
+    line-height: 1.2; 
 }
 
 #expert {
@@ -59,10 +57,10 @@ a:link, a:visited, a:hover, a:active {color:#333;}
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    min-height: 100vh; /* Full viewport height */
-    background-color: #f6f6f6; /* Clean white background for the section */
+    min-height: 100vh; 
+    background-color: #f6f6f6; 
     padding: 20px;
-    box-shadow: 0px -4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    box-shadow: 0px -4px 10px rgba(0, 0, 0, 0.1); 
 }
 
 #expert-mini {
@@ -70,39 +68,39 @@ a:link, a:visited, a:hover, a:active {color:#333;}
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    min-height: 38vh; /* Full viewport height */
-    background-color: #f6f6f6; /* Clean white background for the section */
+    min-height: 38vh; 
+    background-color: #f6f6f6; 
     padding: 0px;
-    box-shadow: 0px -4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    box-shadow: 0px -4px 10px rgba(0, 0, 0, 0.1); 
 }
 
 .map-title {
-    font-family: 'Playfair Display', serif; /* Elegant serif font */
-    font-size: 2.0rem; /* Large title size */
-    font-weight: 700; /* Bold for emphasis */
-    color: #2c3e50; /* Rich dark blue for elegance */
+    font-family: 'Playfair Display', serif; 
+    font-size: 2.0rem; 
+    font-weight: 700; 
+    color: #2c3e50; 
     text-align: center;
-    margin-bottom: 30px; /* Space below the title */
+    margin-bottom: 30px; 
 }
 
 #googleMap {
-    width: 90%; /* Adjust width for responsiveness */
-    max-width: 800px; /* Limit maximum width for large screens */
-    height: 400px; /* Comfortable height for visibility */
-    border: 3px solid #2c3e50; /* Dark border for definition */
-    border-radius: 10px; /* Rounded corners for elegance */
-    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2); /* Drop shadow for depth */
+    width: 90%; 
+    max-width: 800px; 
+    height: 400px; 
+    border: 3px solid #2c3e50; 
+    border-radius: 10px; 
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2); 
     margin: 1em;
 }
 
 .map-controls {
     display: flex;
     justify-content: center;
-    align-content: center;   /* Centers the block of lines vertically */
-    flex-wrap: wrap;         /* Allows items to wrap to new lines */
+    align-content: center; 
+    flex-wrap: wrap; 
     gap: 0.5rem auto;
     margin-top: 1.5rem auto;
-    padding: 0.7rem; /* Good to have some padding */
+    padding: 0.7rem; 
 }
 
 .map-controls button {
@@ -114,20 +112,19 @@ a:link, a:visited, a:hover, a:active {color:#333;}
     border: none;
     border-radius: 3px;
     cursor: pointer;
-    gap: 0.6rem auto;
+    margin: 3px auto;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
     transition: background-color 0.3s ease;
 }
 
 .map-controls button:hover {
     background-color: #34495e;
-    transform: translateY(-2px); /* Lifts the button slightly */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Increases the shadow for a "lifted" effect */
+    transform: translateY(-2px); 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); 
 }
 
 #addDrinkCountBtn {
-    /* Color and Font */
-    background-color: #6F4E37; /* tjv color */
+    background-color: #6F4E37; 
     color: #f6f6f6;
     font-family: 'Roboto', Arial, sans-serif;
     font-size: 1rem;
@@ -135,22 +132,21 @@ a:link, a:visited, a:hover, a:active {color:#333;}
     
     padding: 0.25rem 0.5rem;
     
-    border: none; /* Removes the default browser border */
-    border-radius: 4px; /* Creates soft, rounded corners */
+    border: none; 
+    border-radius: 4px; 
     
-    cursor: pointer; /* Changes the cursor to a hand on hover */
-    transition: all 0.1s ease; /* Makes all changes smooth (hover, active) */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Adds a subtle shadow */
+    cursor: pointer; 
+    transition: all 0.1s ease; 
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); 
 }
 #addDrinkCountBtn:hover {
-    background-color: #85624A; /* A slightly lighter brown for hover */
-    transform: translateY(-2px); /* Lifts the button slightly */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Increases the shadow for a "lifted" effect */
+    background-color: #85624A; 
+    transform: translateY(-2px); 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); 
 }
 
 #initDrinkCountBtn {
-    /* Color and Font */
-    background-color: #6F4E37; /* tjv color */
+    background-color: #6F4E37; 
     color: #f6f6f6;
     font-family: 'Roboto', Arial, sans-serif;
     font-size: 1rem;
@@ -158,17 +154,17 @@ a:link, a:visited, a:hover, a:active {color:#333;}
     
     padding: 0.25rem 0.5rem;
     
-    border: none; /* Removes the default browser border */
-    border-radius: 4px; /* Creates soft, rounded corners */
+    border: none; 
+    border-radius: 4px; 
     
-    cursor: pointer; /* Changes the cursor to a hand on hover */
-    transition: all 0.1s ease; /* Makes all changes smooth (hover, active) */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Adds a subtle shadow */
+    cursor: pointer; 
+    transition: all 0.1s ease; 
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); 
 }
 #initDrinkCountBtn:hover {
-    background-color: #85624A; /* A slightly lighter brown for hover */
-    transform: translateY(-2px); /* Lifts the button slightly */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Increases the shadow for a "lifted" effect */
+    background-color: #85624A; 
+    transform: translateY(-2px); 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); 
 }
 
 #drinkCount {
@@ -179,9 +175,9 @@ a:link, a:visited, a:hover, a:active {color:#333;}
     font-weight: 600;
     
     padding: 10px 20px;
-    border: 2px solid #6F4E37; /* Dark border for definition */
-    border-radius: 8px; /* Creates soft, rounded corners */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Adds a subtle shadow */
+    border: 2px solid #6F4E37; 
+    border-radius: 8px; 
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); 
 }
 
 #calendarText {
@@ -197,15 +193,15 @@ a:link, a:visited, a:hover, a:active {color:#333;}
 }
 
 .basicBox {
-    width: 80%; /* Adjust width for responsiveness */
-    max-width: 800px; /* Limit maximum width for large screens */
-    max-height: 1000px; /* Comfortable height for visibility */
+    width: 80%; 
+    max-width: 800px; 
+    max-height: 1000px; 
     border: none;
     margin: 1.6em auto;
 }
 
 .peopleName {
-    font-family: 'Roboto', sans-serif; /* Clean, readable font */
+    font-family: 'Roboto', sans-serif; 
     font-size: 1.3rem; 
     font-weight: 600; 
     color: #34495e;
@@ -213,22 +209,22 @@ a:link, a:visited, a:hover, a:active {color:#333;}
     margin: 1rem auto;
     margin-top: 2.2rem;
     max-width: 800px; 
-    line-height: 1.8; /* Improve readability with line height */
+    line-height: 1.8; 
 }
 
 .peopleIntro {
-    font-family: 'Roboto', sans-serif; /* Clean, readable font */
+    font-family: 'Roboto', sans-serif; 
     font-size: 0.8rem; 
     font-weight: 300; 
     color: #34495e;
     text-align: left;
     margin: 1rem auto;
     max-width: 800px; 
-    line-height: 1.8; /* Improve readability with line height */
+    line-height: 1.8; 
 }
 
 .lastWords {
-    font-family: 'Roboto', sans-serif; /* Clean, readable font */
+    font-family: 'Roboto', sans-serif; 
     font-size: 1.0rem; 
     font-weight: 600; 
     color: #34495e;
@@ -236,5 +232,5 @@ a:link, a:visited, a:hover, a:active {color:#333;}
     margin: 1rem auto;
     margin-top: 2rem;
     max-width: 800px; 
-    line-height: 1.8; /* Improve readability with line height */
+    line-height: 1.8; 
 }
