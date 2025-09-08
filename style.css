@@ -95,11 +95,11 @@ a:link, a:visited, a:hover, a:active {color:#333;}
 
 .map-controls {
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     align-content: center; 
     flex-wrap: wrap; 
     gap: 0.5rem auto;
-    margin-top: 1.5rem auto;
+    margin-top: 1.2rem auto;
     padding: 0.7rem; 
 }
 
