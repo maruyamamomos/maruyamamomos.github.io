@@ -3,26 +3,20 @@ function initCounters() {
     if (localStorage.getItem("drinkCount") === null) {
         localStorage.setItem("drinkCount", 0);
     }
-    document.getElementById("drinkCount").value = localStorage.getItem("drinkCount"); // ?? duplciated
+    document.getElementById("drinkCount").value = localStorage.getItem("drinkCount");
 };
 
 function initSavedDate() {
     if (localStorage.getItem("savedDate") === null) {
         localStorage.setItem("savedDate", "");
     }
-    document.getElementById("drinkCount").innerText = localStorage.getItem("drinkCount"); // ?? duplciated
+    document.getElementById("drinkCount").innerText = localStorage.getItem("drinkCount");
 };
-
-// function getAllSavedDates() {
-//     let allSavedDates;
-//     allSavedDates = localStorage.getItem("savedDate");
-//     return allSavedDates;
-// };
 
 initCounters();
 initSavedDate();
 document.getElementById("drinkCount").value = localStorage.getItem("drinkCount");
-document.getElementById("savedDate").innerText = localStorage.getItem("savedDate") || ""; // getAllSavedDates();
+document.getElementById("savedDate").innerText = localStorage.getItem("savedDate") || "";
 
 // Increment the drink counter and update LocalStorage and display.
 document.getElementById("addDrinkCountBtn").addEventListener("click", function() {
