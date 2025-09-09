@@ -51,6 +51,7 @@ a:link, a:visited, a:hover, a:active {color:#333;}
     margin: 20px auto;
     max-width: 800px; 
     line-height: 1.2; 
+    padding: 0 30px;
 }
 
 #expert {
@@ -200,10 +201,11 @@ a:link, a:visited, a:hover, a:active {color:#333;}
     max-height: 1000px; 
     border: none;
     margin: 1.6em auto;
+    text-align: center;
 }
 
 .peopleName {
-    font-family: 'Playfair Display', serif; 
+    font-family: 'Roboto', sans-serif; 
     font-size: 1.3rem; 
     font-weight: 600; 
     color: #34495e;
@@ -246,4 +248,20 @@ a:link, a:visited, a:hover, a:active {color:#333;}
     margin-top: 2rem;
     max-width: 800px; 
     line-height: 1.8; 
+}
+
+.img-box {
+  text-align: center; /* 이미지를 가로 가운데 정렬 */
+}
+
+.img-box img {
+  width: 200px;   /* 가로 크기 줄이기 */
+  height: auto;   /* 세로는 비율에 맞춰 자동 조정 */
+  border-radius: 12px; /* (옵션) 둥글게 처리 */
+}
+
+.button-group {
+  display: grid;
+  grid-auto-flow: column;
+  gap: 20px; /* 버튼들 사이 간격 */
 }
