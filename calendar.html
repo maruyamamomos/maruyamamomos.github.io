@@ -26,14 +26,20 @@
     <script src="calendar.js" defer></script>
     <section  class="expert-mini" id="expert-mini">
         <div class="basicBox">
-            <p class="peopleIntro">언제 데자와를 먹었는지 간단하게 기록하는 곳입니다. 버튼을 눌러 데자와를 마신 숫자를 늘려 보세요.</p>
+            <div class="img-box"><img src="tjv.png"></div>
+            <p class="mid2-explanation">언제 데자와를 먹었는지 간단하게 기록하는 곳입니다. <br><br> 버튼을 눌러 데자와를 마신 숫자를 늘려 보세요.</p>
             <div class="counter-group">
-                <label for="drinkCount" id="calendarText">마신 횟수:</label>
+                <label for="drinkCount" id="calendarText">마신 횟수: </label>
                 <input type="text" id="drinkCount" readonly> 
                 <p></p>
+                <br>
+                <div class="button-group">
                 <button id="addDrinkCountBtn">횟수 늘리기</button>
                 <button id="initDrinkCountBtn">횟수 초기화</button>
-                <p></p>
+                </div>
+                <p>
+                    <br>
+                </p>
             </div>
             <div>
                 <label for="savedDate" id="calendarText">마신 날짜:</label>
