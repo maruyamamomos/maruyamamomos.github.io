@@ -54,7 +54,7 @@ async function initMap() {
   
   locations.forEach(loc => {
     const imageElement = document.createElement('img');
-    imageElement.src = 'tjv.png';
+    imageElement.src = 'image/tjv.png';
     imageElement.style.width = '25px';
     imageElement.style.height = '25px';
 
