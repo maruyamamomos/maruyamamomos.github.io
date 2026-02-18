@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>덧신</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@300;500;700&display=swap" rel="stylesheet">
+    <style>
+        /* ===== GLOBAL & RESET ===== */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        /* ===== COLOR VARIABLES ===== */
+        :root {
+            --bg-color: #64549C;      /* Purple */
+            --text-color: #B9BCCB;    /* Muted White */
+            --accent-color: #F73028;  /* Bright Red */
+        }
+
+        /* ===== BACKGROUND ===== */
+        body {
+            width: 100%;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: var(--bg-color);
+            background-image: radial-gradient(circle at 50% 50%, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.3) 100%);
+            color: var(--text-color);
+            font-family: 'Noto Serif KR', serif;
+            overflow-y: auto;
+        }
+
+        /* ===== CONTAINER ===== */
+        .container {
+            width: 100%;
+            max-width: 800px;
+            padding: 80px 40px;
+            margin: 0 auto;
+        }
+
+        /* ===== TYPOGRAPHY ===== */
+        .quote {
+            font-size: 1.6rem; 
+            font-weight: 300;
+            letter-spacing: 0.02em;
+            line-height: 2.2;
+            color: var(--text-color);
+            font-style: normal;
+            text-align: left;
+            white-space: pre-wrap; 
+        }
+
+        /* ===== GLITCH INSERTION STYLING ===== */
+        .random-word {
+            display: inline-block;
+            
+            /* ALIGNMENT FIX V3: 
+               Increased negative offset to -0.35em to pull it down further. */
+            vertical-align: -0.69em; 
+            
+            overflow: hidden;
+            
+            /* Initial State */
+            max-width: 0;
+            opacity: 0;
+            margin: 0;
+            
+            color: var(--accent-color);
+            font-weight: 700;
+            
+            /* Hardware acceleration hints */
+            transform: translateZ(0);
+            will-change: max-width, opacity, transform, text-shadow, background;
+            
+            white-space: nowrap;
+            position: relative; /* For pseudo-element noise if needed */
+        }
+
+        /* Active State */
+        .random-word.visible {
+            animation: 
+                openSpace 0.1s cubic-bezier(0.1, 0.9, 0.2, 1.0) forwards,
+                staticGlitch 0.3s steps(4) forwards; /* Faster, tighter steps */
+            
+            margin: 0 4px;
+        }
+
+        /* ===== ANIMATIONS ===== */
+        
+        /* 1. Width Expansion */
+        @keyframes openSpace {
+            0% { max-width: 0; opacity: 0; }
+            100% { max-width: 150px; opacity: 1; }
+        }
+
+        /* 2. Static Noise Glitch (Tighter Wobble + Noise Texture) */
+        @keyframes staticGlitch {
+            0% {
+                opacity: 0.5;
+                /* Small wobble (reduced from 10px to 2px) */
+                transform: translateX(-2px) scale(1.1, 0.9);
+                
+                /* Static Noise Effect: Scanlines */
+                background-image: repeating-linear-gradient(
+                    to bottom,
+                    transparent 0px,
+                    transparent 2px,
+                    var(--accent-color) 2px,
+                    var(--accent-color) 3px
+                );
+                background-size: 100% 10px;
+                
+                /* RGB Split */
+                text-shadow: 2px 0 #0ff, -2px 0 #d0d;
+                filter: contrast(200%);
+            }
+            25% {
+                /* Tiny skew (reduced from 20deg to 5deg) */
+                transform: skewX(5deg);
+                
+                /* Shift noise pattern */
+                background-image: repeating-linear-gradient(
+                    to bottom,
+                    transparent 0px,
+                    transparent 3px,
+                    rgba(255, 255, 255, 0.5) 3px,
+                    rgba(255, 255, 255, 0.5) 4px
+                );
+                background-position: 0 5px;
+                
+                color: #fff; /* Flash White */
+                text-shadow: -1px 0 var(--accent-color);
+            }
+            50% {
+                transform: translateX(1px);
+                /* Remove Red Underline: No border-bottom here */
+                background: transparent;
+                text-shadow: none;
+                color: var(--accent-color);
+                opacity: 1;
+            }
+            75% {
+                transform: skewX(-3deg);
+                text-shadow: 1px 0 #0ff;
+            }
+            100% {
+                transform: scale(1) translateX(0) translateY(0);
+                text-shadow: none;
+                opacity: 1;
+                background: transparent;
+            }
+        }
+
+        /* Paragraph Spacing */
+        .paragraph-spacer {
+            height: 40px;
+            display: block;
+        }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 768px) {
+            .quote { font-size: 1.2rem; line-height: 2; }
+            .container { padding: 40px 20px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="quote" id="quoteContainer"></div>
+    </div>
+
+    <script>
+        // Raw Text Data
+        const RAW_TEXT = [
+            // Paragraph 1
+            [
+                "나는 신발이 없다.",
+                "지난 10년간 신발이 필요 없었기 때문으로.",
+                "발에 닿는 앞마당의 감촉이 시원하다."
+            ],
+            // Paragraph 2
+            [
+                "긴 시간을 머금은 잔디의 푸르른 인사",
+                "오렌지를 닮은 햇살은 흐릿한 모니터를 덮고",
+                "청명하게 노래하는 까치에게 손을 흔들어도 보고",
+                "치즈빛 고양이가 살며시 부비는 꼬리가 보드랍다."
+            ],
+            // Paragraph 3
+            [
+                "너무 오랫동안 닫아두고 살았나보다",
+                "나부끼는 해일에 산뜻 올라타",
+                "내가 있을 곳으로 안정을 찾아"
+            ]
+        ];
+
+        // Insertion Sets
+        const INFIX_SETS = {
+            set1: ["멍투성이", "상처"],
+            set2: ["칼", "핏자국", "가학", "흉터"],
+            set3: ["머저리", "꺼져", "씨발", "병신아", "살지마", "자살해"]
+        };
+
+        const getRandomItem = (arr) => arr[Math.floor(Math.random() * arr.length)];
+        const getRandomInt = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;
+
+        function processText() {
+            let insertions = [];
+
+            // --- Set 1: Paragraph 1, Last Line ---
+            const p1Idx = 0;
+            const p1Lines = RAW_TEXT[p1Idx];
+            const p1LastLineIdx = p1Lines.length - 1;
+            const p1LastLineWords = p1Lines[p1LastLineIdx].split(' ');
+            
+            insertions.push({
+                pIndex: p1Idx,
+                lIndex: p1LastLineIdx,
+                wIndex: getRandomInt(0, p1LastLineWords.length), 
+                text: getRandomItem(INFIX_SETS.set1)
+            });
+
+            // --- Set 2: Paragraph 2, Every Line (1 word) ---
+            const p2Idx = 1;
+            const p2Lines = RAW_TEXT[p2Idx];
+            p2Lines.forEach((line, lIdx) => {
+                const words = line.split(' ');
+                insertions.push({
+                    pIndex: p2Idx,
+                    lIndex: lIdx,
+                    wIndex: getRandomInt(0, words.length),
+                    text: getRandomItem(INFIX_SETS.set2)
+                });
+            });
+
+            // --- Set 3: Paragraph 3, Every Line (1~2 words) ---
+            const p3Idx = 2;
+            const p3Lines = RAW_TEXT[p3Idx];
+            p3Lines.forEach((line, lIdx) => {
+                const words = line.split(' ');
+                const count = getRandomInt(1, 2); 
+                
+                for(let k=0; k<count; k++) {
+                    insertions.push({
+                        pIndex: p3Idx,
+                        lIndex: lIdx,
+                        wIndex: getRandomInt(0, words.length),
+                        text: getRandomItem(INFIX_SETS.set3)
+                    });
+                }
+            });
+
+            // Sort: Top -> Bottom
+            insertions.sort((a, b) => {
+                if (a.pIndex !== b.pIndex) return a.pIndex - b.pIndex;
+                if (a.lIndex !== b.lIndex) return a.lIndex - b.lIndex;
+                return a.wIndex - b.wIndex;
+            });
+
+            // Build HTML
+            let finalHTML = "";
+            let insertionCounter = 0;
+
+            RAW_TEXT.forEach((para, pIdx) => {
+                para.forEach((line, lIdx) => {
+                    let words = line.split(' ');
+                    let lineHTML = "<div>";
+
+                    let lineInsertions = insertions.filter(ins => ins.pIndex === pIdx && ins.lIndex === lIdx);
+                    
+                    for (let i = 0; i <= words.length; i++) {
+                        let formatIns = lineInsertions.filter(ins => ins.wIndex === i);
+                        
+                        // Insert placeholders (Red words)
+                        formatIns.forEach(ins => {
+                            lineHTML += `<span id="insert-${insertionCounter}" class="random-word">${ins.text}</span>`;
+                            insertionCounter++;
+                        });
+
+                        // Insert original word
+                        if (i < words.length) {
+                            // Apply explicit alignment to normal text as well to ensure matching context
+                            lineHTML += `<span style="vertical-align: baseline;">${words[i]}</span>`;
+                            if (i < words.length - 1) lineHTML += " ";
+                        }
+                    }
+                    lineHTML += "</div>";
+                    finalHTML += lineHTML;
+                });
+                
+                if (pIdx < RAW_TEXT.length - 1) {
+                    finalHTML += `<span class="paragraph-spacer"></span>`;
+                }
+            });
+
+            document.getElementById('quoteContainer').innerHTML = finalHTML;
+
+            // Trigger Animation (1 sec intervals between insertions)
+            for (let i = 0; i < insertionCounter; i++) {
+                setTimeout(() => {
+                    const el = document.getElementById(`insert-${i}`);
+                    if (el) el.classList.add('visible');
+                }, 1500 * (i + 1)); 
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', processText);
+    </script>
+</body>
+</html>
