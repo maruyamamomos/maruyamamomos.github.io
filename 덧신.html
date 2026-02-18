@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>덧신</title>
+    <title>덧신 - Looping Glitch Version</title>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@300;500;700&display=swap" rel="stylesheet">
     <style>
         /* ===== GLOBAL & RESET ===== */
@@ -54,8 +54,7 @@
         .random-word {
             display: inline-block;
             
-            /* ALIGNMENT FIX V3: 
-               Increased negative offset to -0.35em to pull it down further. */
+            /* ALIGNMENT FIX V3 */
             vertical-align: -0.69em; 
             
             overflow: hidden;
@@ -73,14 +72,14 @@
             will-change: max-width, opacity, transform, text-shadow, background;
             
             white-space: nowrap;
-            position: relative; /* For pseudo-element noise if needed */
+            position: relative; 
         }
 
         /* Active State */
         .random-word.visible {
             animation: 
                 openSpace 0.1s cubic-bezier(0.1, 0.9, 0.2, 1.0) forwards,
-                staticGlitch 0.3s steps(4) forwards; /* Faster, tighter steps */
+                staticGlitch 0.3s steps(4) forwards; 
             
             margin: 0 4px;
         }
@@ -93,14 +92,12 @@
             100% { max-width: 150px; opacity: 1; }
         }
 
-        /* 2. Static Noise Glitch (Tighter Wobble + Noise Texture) */
+        /* 2. Static Noise Glitch */
         @keyframes staticGlitch {
             0% {
                 opacity: 0.5;
-                /* Small wobble (reduced from 10px to 2px) */
                 transform: translateX(-2px) scale(1.1, 0.9);
                 
-                /* Static Noise Effect: Scanlines */
                 background-image: repeating-linear-gradient(
                     to bottom,
                     transparent 0px,
@@ -110,15 +107,12 @@
                 );
                 background-size: 100% 10px;
                 
-                /* RGB Split */
                 text-shadow: 2px 0 #0ff, -2px 0 #d0d;
                 filter: contrast(200%);
             }
             25% {
-                /* Tiny skew (reduced from 20deg to 5deg) */
                 transform: skewX(5deg);
                 
-                /* Shift noise pattern */
                 background-image: repeating-linear-gradient(
                     to bottom,
                     transparent 0px,
@@ -128,12 +122,11 @@
                 );
                 background-position: 0 5px;
                 
-                color: #fff; /* Flash White */
+                color: #fff; 
                 text-shadow: -1px 0 var(--accent-color);
             }
             50% {
                 transform: translateX(1px);
-                /* Remove Red Underline: No border-bottom here */
                 background: transparent;
                 text-shadow: none;
                 color: var(--accent-color);
@@ -203,7 +196,14 @@
         const getRandomItem = (arr) => arr[Math.floor(Math.random() * arr.length)];
         const getRandomInt = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;
 
+        // Keep track of all active timeouts so we can cancel them before restarting
+        let activeTimeouts = [];
+
         function processText() {
+            // 1. Clear previous state (Kill the old timelines)
+            activeTimeouts.forEach(timeoutId => clearTimeout(timeoutId));
+            activeTimeouts = []; // Reset the memory array
+            
             let insertions = [];
 
             // --- Set 1: Paragraph 1, Last Line ---
@@ -278,7 +278,6 @@
 
                         // Insert original word
                         if (i < words.length) {
-                            // Apply explicit alignment to normal text as well to ensure matching context
                             lineHTML += `<span style="vertical-align: baseline;">${words[i]}</span>`;
                             if (i < words.length - 1) lineHTML += " ";
                         }
@@ -292,18 +291,28 @@
                 }
             });
 
+            // Update the DOM
             document.getElementById('quoteContainer').innerHTML = finalHTML;
 
-            // Trigger Animation (1 sec intervals between insertions)
+            // Trigger Animation (Store IDs into activeTimeouts array)
             for (let i = 0; i < insertionCounter; i++) {
-                setTimeout(() => {
+                let timeoutId = setTimeout(() => {
                     const el = document.getElementById(`insert-${i}`);
                     if (el) el.classList.add('visible');
                 }, 1500 * (i + 1)); 
+                
+                activeTimeouts.push(timeoutId);
             }
         }
 
-        document.addEventListener('DOMContentLoaded', processText);
+        // Initialize and setup the 40-second cycle loop
+        document.addEventListener('DOMContentLoaded', () => {
+            // Run immediately on first load
+            processText();
+            
+            // Loop exactly every 40,000 milliseconds (40 seconds)
+            setInterval(processText, 40000); 
+        });
     </script>
 </body>
 </html>
